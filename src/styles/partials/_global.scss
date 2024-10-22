@@ -1,0 +1,14 @@
+// Global style reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.text-secondary {
+  color: #afafaf; // Update with variable for secondary color
+}
+
+.bold {
+  font-weight: 900;
+}

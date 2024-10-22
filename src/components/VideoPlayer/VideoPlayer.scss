@@ -1,0 +1,16 @@
+.video-player {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__video {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &__details,
+  &__stat {
+    display: flex;
+    flex-direction: row;
+  }
+}
