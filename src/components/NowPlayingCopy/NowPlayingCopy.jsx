@@ -1,12 +1,12 @@
 import React from "react";
-import "./VideoPlayerContent.scss";
+import "./NowPlayingCopy.scss";
 import "../../App.jsx";
 
 //test image icons
 const viewsIcon = "src/assets/images/Icons/views.svg";
 const likeIcon = "src/assets/images/Icons/likes.svg";
 
-function VideoPlayerContent({ videoDetails }) {
+export default function NowPlayingCopy({ videoDetails }) {
   return (
     <div className="video-player">
       {/* Video Title */}
@@ -17,7 +17,7 @@ function VideoPlayerContent({ videoDetails }) {
       {/* Video Details Section */}
       <div className="video-player__details">
         <div className="video-player__publisher-date">
-          <p className="video-player__publisher bold">
+          <p className="video-player__publisher av-bold">
             {videoDetails[0].channel}
           </p>
           <p className="video-player__date text-secondary">
@@ -52,23 +52,6 @@ function VideoPlayerContent({ videoDetails }) {
           {videoDetails[0].description}
         </p>
       </div>
-
-      {/* Comments Section */}
-      <div className="video-player__comments">
-        <ul>
-          {videoDetails[0].comments.map((comment) => (
-            <li key={comment.id} className="video-player__comment">
-              <p className="video-player__comment-name bold">{comment.name}</p>
-              <p className="video-player__comment-date text-secondary">
-                {new Date(comment.timestamp).toLocaleDateString()}
-              </p>
-              <p className="video-player__comment-text">{comment.comment}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 }
-
-export default VideoPlayerContent;

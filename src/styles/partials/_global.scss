@@ -9,6 +9,17 @@
   color: #afafaf; // Update with variable for secondary color
 }
 
-.bold {
-  font-weight: 900;
+.av-demi {
+  font-weight: 600;
+  color: blue;
+}
+
+.av-bold {
+  font-weight: 700;
+  color: red;
+}
+
+.label {
+  text-transform: uppercase;
+  color: #afafaf; // Update with variable for secondary color
 }

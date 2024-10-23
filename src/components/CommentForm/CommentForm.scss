@@ -1,0 +1,15 @@
+.video-player {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__comments-form-area {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+}
