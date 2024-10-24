@@ -10,15 +10,18 @@ import NextVideos from "./components/NextVideos/NextVideos";
 
 function App() {
   const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
-  const [nextVideo, setNextVideo] = useState(videos);
+  const [nextVideos, setNextVideo] = useState(videos);
 
+  const filteredNextVideos = nextVideos.filter(
+    (video) => video.id !== currentVideo.id
+  );
   return (
     <div className="app">
       <NavBar />
       <VideoPlayer currentVideo={currentVideo} />
       <NowPlayingCopy currentVideo={currentVideo} />
       <CommentForm currentVideo={currentVideo} />
-      <NextVideos videos={nextVideo} />
+      <NextVideos videos={filteredNextVideos} />
     </div>
   );
 }
