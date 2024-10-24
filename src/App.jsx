@@ -10,14 +10,14 @@ import NextVideos from "./components/NextVideos/NextVideos";
 
 function App() {
   const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
-  const [nextVideo, setNextVideo] = useState(videos[0]);
+  const [nextVideo, setNextVideo] = useState(videos);
 
   return (
     <div className="app">
       <NavBar />
-      <VideoPlayer videoDetails={currentVideo} />
-      <NowPlayingCopy videoDetails={currentVideo} />
-      <CommentForm videoDetails={currentVideo} />
+      <VideoPlayer currentVideo={currentVideo} />
+      <NowPlayingCopy currentVideo={currentVideo} />
+      <CommentForm currentVideo={currentVideo} />
       <NextVideos videos={nextVideo} />
     </div>
   );
