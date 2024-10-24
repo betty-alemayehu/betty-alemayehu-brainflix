@@ -17,9 +17,7 @@ export default function NowPlayingCopy({ videoDetails }) {
       {/* Video Details Section */}
       <div className="video-player__details">
         <div className="video-player__publisher-date">
-          <p className="video-player__publisher av-bold">
-            {videoDetails[0].channel}
-          </p>
+          <h3 className="video-player__publisher">{videoDetails[0].channel}</h3>
           <p className="video-player__date text-secondary">
             {new Date(videoDetails[0].timestamp).toLocaleDateString()}
           </p>

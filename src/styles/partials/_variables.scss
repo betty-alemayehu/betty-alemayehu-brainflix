@@ -1,0 +1,36 @@
+//Font variables
+$font-regular: "AvenirNextLTPro", sans-serif;
+$font-weight-regular: 400;
+$font-weight-demi: 600;
+$font-weight-bold: 700;
+
+//Padding
+$padding-spacing-base-unit: 0.5rem;
+//mobile padding between components
+$gutter-mobile: 1rem;
+//tablet/desktop padding between components
+$gutter-tablet-desktop: 1.5rem;
+
+//Site colors
+
+//Primary colors
+
+// BrainFlix-Black: Primary text color.
+$BrainFlix-Black: #323232;
+// BrainFlix-Blue: Primary CTA color. Active form field outline color.
+$BrainFlix-Blue: #0095ff;
+// Silver: Seconday text color. Text Label color.
+$Silver: #afafaf;
+// White: Background color. CTA text color.
+$White: #ffffff;
+
+//Secondary colors
+
+// BrainFlix-DarkBlack: Video player components.
+$BrainFlix-DarkBlack: #000000;
+// BrainFlix-DarkBlue: CTA hover state color.
+$BrainFlix-DarkBlue: #0065ad;
+// Mercury: Divider line. Form field outline color.
+$Mercury: #e1e1e1;
+// Alabaster: Form field background color.
+$Alabaster: #fafafa;

@@ -1,8 +1,11 @@
-@import "src/styles/partials/mixins";
+@import "/src/styles/partials/mixins";
+@import "/src/styles/partials/variables";
+@import "/src/styles/partials/global";
 
 .nav-bar {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   //switch to row for tablet/desktop
@@ -34,22 +37,26 @@
   }
 
   &__user-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    object-fit: cover;
     @include tablet {
       display: none;
     }
 
     &--tablet {
       display: none;
-      //update with @include once mixins are setup
       @include tablet {
         display: flex;
-        width: 2.5rem;
-        height: 2.5rem;
-        object-fit: cover;
       }
     }
+  }
+  &__button {
+    position: relative;
+  }
+  &__button-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
   }
 }

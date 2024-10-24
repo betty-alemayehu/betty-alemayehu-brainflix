@@ -1,30 +1,74 @@
+@import "/src/styles/partials/mixins";
+@import "/src/styles/partials/variables";
+
 // Global style reset
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $font-regular;
+  color: $BrainFlix-Black;
+  font-weight: $font-weight-regular;
+}
+
+h1 {
+  @include h1PageHeader;
+}
+
+h2 {
+  @include h2SectionHeader;
+}
+
+h3 {
+  @include h3SubHeader;
+}
+
+h4 {
+  @include h4LabelsAndButtons;
+}
+
+p {
+  @include pBodyCopy;
 }
 
 .text-secondary {
-  color: #afafaf; // Update with variable for secondary color
-}
-
-.av-demi {
-  font-weight: 600;
-  color: blue;
-}
-
-.av-bold {
-  font-weight: 700;
-  color: red;
-}
-
-.label {
-  text-transform: uppercase;
-  color: #afafaf; // Update with variable for secondary color
+  color: $Silver;
 }
 
 .logo-icon {
   max-width: 7.5rem;
   max-height: 1.5625rem;
+  margin: $gutter-mobile 0;
+}
+
+.avatar {
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  max-width: 2.25rem;
+  max-height: 2.25rem;
+  object-fit: cover;
+  background-color: $Mercury;
+  border-radius: 50%;
+  @include tablet {
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+  }
+}
+
+button {
+  flex-grow: 1;
+  padding: 0 0.625rem; /* Making space for the icon on the left */
+  margin: $gutter-mobile 0;
+  border-radius: 0.25rem;
+  border: none;
+  width: 100%;
+  height: min-content;
+  background-color: $BrainFlix-Blue;
+  @include tablet {
+    min-width: 9.375rem;
+    padding: 0 2rem;
+    margin: $gutter-tablet-desktop 0;
+  }
 }

@@ -8,7 +8,7 @@ export default function NextVideos({ videos }) {
   return (
     <div className="next-videos">
       {/* Next Videos Section */}
-      <h4 className="label">Next Videos</h4>
+      <h2 className="label">Next Videos</h2>
       <ul className="next-videos__list">
         {videos.map((video) => (
           <li key={video.id} className="next-videos__card">
@@ -20,7 +20,7 @@ export default function NextVideos({ videos }) {
               />
             </div>
             <div className="next-videos__info">
-              <p className="next-videos__title av-demi">{video.title}</p>
+              <h3 className="next-videos__title">{video.title}</h3>
               <p className="next-videos__channel">{video.channel}</p>
             </div>
           </li>
