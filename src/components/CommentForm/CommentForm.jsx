@@ -5,7 +5,9 @@ import "./CommentForm.scss";
 const userIcon = "src/assets/images/Mohan-muruge.jpg";
 const commentIcon = "src/assets/images/Icons/add_comment.svg";
 
-export default function CommentForm({ videoDetails }) {
+export default function CommentForm({ currentVideo }) {
+  const { comments } = currentVideo;
+
   // Function for form submission
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent page refresh
@@ -23,7 +25,7 @@ export default function CommentForm({ videoDetails }) {
       {/* Comments Section */}
       <div className="video-player__comments">
         <h3 className="video-player__comment-count av-bold">
-          {videoDetails[0].comments.length} Comments
+          {comments.length} Comments
         </h3>
 
         <div className="video-player__comments-form-area">
@@ -58,7 +60,7 @@ export default function CommentForm({ videoDetails }) {
         </div>
         {/* Pulling comments from JSON Data */}
         <ul>
-          {videoDetails[0].comments.map((comment) => (
+          {comments.map((comment) => (
             <li key={comment.id} className="video-player__comment">
               <div className="video-player__comment-user-icon-wrapper">
                 <img

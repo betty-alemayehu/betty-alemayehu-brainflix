@@ -2,18 +2,16 @@ import React from "react";
 import "./VideoPlayer.scss";
 import "../../App.jsx";
 
-function VideoPlayer({ videoDetails }) {
+function VideoPlayer({ currentVideo }) {
+  const { image, video } = currentVideo;
+
   return (
     <div className="video-player">
       {/* Video Section */}
       <div className="video-player__video-container">
         <figure>
-          <video
-            className="video-player__video"
-            controls
-            poster={videoDetails[0].image}
-          >
-            <source src={videoDetails[0].video} type="video/mp4" />
+          <video className="video-player__video" controls poster={image}>
+            <source src={video} type="video/mp4" />
             Some error message here...
           </video>
         </figure>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.scss";
 import videoDetails from "./data/video-details.json";
 import videos from "./data/videos.json";
@@ -8,13 +9,16 @@ import CommentForm from "./components/CommentForm/CommentForm";
 import NextVideos from "./components/NextVideos/NextVideos";
 
 function App() {
+  const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
+  const [nextVideo, setNextVideo] = useState(videos[0]);
+
   return (
     <div className="app">
       <NavBar />
-      <VideoPlayer videoDetails={videoDetails} />
-      <NowPlayingCopy videoDetails={videoDetails} />
-      <CommentForm videoDetails={videoDetails} />
-      <NextVideos videos={videos} />
+      <VideoPlayer videoDetails={currentVideo} />
+      <NowPlayingCopy videoDetails={currentVideo} />
+      <CommentForm videoDetails={currentVideo} />
+      <NextVideos videos={nextVideo} />
     </div>
   );
 }
