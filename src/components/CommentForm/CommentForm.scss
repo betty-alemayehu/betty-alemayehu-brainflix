@@ -16,6 +16,25 @@
     flex-direction: column;
     width: 100%;
   }
+
+  &__form-textarea {
+    border: 0.125rem solid $Mercury;
+    border-radius: 0.25rem;
+    transition: border-color 0.5s;
+
+    &:focus {
+      border: 0.125rem solid $BrainFlix-Blue;
+    }
+
+    &:not(:focus):valid {
+      border-color: $Mercury;
+    }
+
+    &.error {
+      border-color: $error-state-color;
+    }
+  }
+
   &__form-submit {
     position: relative;
   }

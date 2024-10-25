@@ -1,3 +1,4 @@
+import { useState } from "react";
 import React from "react";
 import "./CommentForm.scss";
 
@@ -8,6 +9,10 @@ const commentIcon = "src/assets/images/Icons/add_comment.svg";
 export default function CommentForm({ currentVideo }) {
   const { comments } = currentVideo;
 
+  //Error state for submissions - copied from Nav Bar
+  const [commentValue, setCommentValue] = useState("");
+  const [isError, setIsError] = useState(false);
+
   // Function for form submission
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent page refresh
@@ -16,8 +21,20 @@ export default function CommentForm({ currentVideo }) {
 
     if (newComment) {
       console.log("Comment submitted via Browser:", newComment); // Test log the new comment to the console
+      //Error state for submissions
+      setCommentValue("");
+      setIsError(false);
       event.target.reset(); // Clear the textarea after submitting
+    } else {
+      setIsError(true);
     }
+  };
+
+  const handleInputChange = (error) => {
+    const value = error.target.value;
+    setCommentValue(value);
+
+    setIsError(value.trim() === "");
   };
 
   return (
@@ -43,9 +60,14 @@ export default function CommentForm({ currentVideo }) {
               <h2>Join the Conversation</h2>
             </label>
             <textarea
+              required
               id="new-comment"
               name="new-comment" // Using name to access the value via event.target.elements
-              className="video-player__form-textarea"
+              value={commentValue}
+              onChange={handleInputChange}
+              className={`video-player__form-textarea ${
+                isError ? "error" : ""
+              }`}
               placeholder="Add a new comment"
             ></textarea>
             <button type="submit" className="video-player__form-submit">
