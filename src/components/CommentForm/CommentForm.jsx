@@ -70,10 +70,12 @@ export default function CommentForm({ currentVideo }) {
                 />
               </div>
               <div className="video-player__comment-copy">
-                <h3 className="video-player__comment-name">{comment.name}</h3>
-                <p className="video-player__comment-date text-secondary">
-                  {new Date(comment.timestamp).toLocaleDateString()}
-                </p>
+                <div className="video-player__comment-copy-name-date">
+                  <h3 className="video-player__comment-name">{comment.name}</h3>
+                  <p className="video-player__comment-date text-secondary">
+                    {new Date(comment.timestamp).toLocaleDateString()}
+                  </p>
+                </div>
                 <p className="video-player__comment-text">{comment.comment}</p>
               </div>
             </li>

@@ -61,4 +61,8 @@
       opacity: 1;
     }
   }
+  &__comment-copy-name-date {
+    display: flex;
+    flex-direction: row;
+  }
 }
