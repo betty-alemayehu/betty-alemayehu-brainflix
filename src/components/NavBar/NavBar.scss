@@ -23,8 +23,21 @@
   &__search {
     flex-grow: 1;
     padding: 0.625rem 0.625rem 0.625rem 2.5rem; /* Making space for the icon on the left */
-    border: 0.125rem solid $error-state-color; //update color with variable
+    border: 0.0625rem solid $Mercury; //update color with variable
     border-radius: 0.25rem;
+    transition: border-color 0.5s;
+
+    &:focus {
+      border: 0.125rem solid $BrainFlix-Blue;
+    }
+
+    &:not(:focus):valid {
+      border-color: $Mercury;
+    }
+
+    &.error {
+      border-color: $error-state-color;
+    }
   }
 
   &__search-icon {
