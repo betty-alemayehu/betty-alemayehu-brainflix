@@ -1,7 +1,12 @@
-.video-player {
+@import "/src/styles/partials/mixins";
+@import "/src/styles/partials/variables";
+@import "/src/styles/partials/global";
+
+.now-playing-copy {
   display: flex;
   flex-direction: column;
   width: 100%;
+  @include containerPadding;
 
   &__details,
   &__stat {

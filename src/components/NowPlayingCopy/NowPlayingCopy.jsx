@@ -10,41 +10,47 @@ export default function NowPlayingCopy({ currentVideo }) {
   const { title, channel, timestamp, views, likes, description } = currentVideo;
 
   return (
-    <div className="video-player">
+    <div className="now-playing-copy">
       {/* Video Title */}
       <div>
-        <h1 className="video-player__title">{title}</h1>
+        <h1 className="now-playing-copy__title">{title}</h1>
       </div>
 
       {/* Video Details Section */}
-      <div className="video-player__details">
-        <div className="video-player__publisher-date">
-          <h3 className="video-player__publisher">{channel}</h3>
-          <p className="video-player__date text-secondary">
+      <div className="now-playing-copy__details">
+        <div className="now-playing-copy__publisher-date">
+          <h3 className="now-playing-copy__publisher">{channel}</h3>
+          <p className="now-playing-copy__date text-secondary">
             {new Date(timestamp).toLocaleDateString()}
           </p>
         </div>
 
         {/* Stats Section */}
-        <div className="video-player__stats">
-          <div className="video-player__stat">
+        <div className="now-playing-copy__stats">
+          <div className="now-playing-copy__stat">
             <img
               src={viewsIcon}
               alt="View count"
-              className="video-player__icon"
+              className="now-playing-copy__icon"
             />
-            <p className="video-player__watch-count text-secondary">{views}</p>
+            <p className="now-playing-copy__watch-count text-secondary">
+              {views}
+            </p>
           </div>
-          <div className="video-player__stat">
-            <img src={likeIcon} alt="Likes" className="video-player__icon" />
-            <p className="video-player__likes text-secondary">{likes}</p>
+          <div className="now-playing-copy__stat">
+            <img
+              src={likeIcon}
+              alt="Likes"
+              className="now-playing-copy__icon"
+            />
+            <p className="now-playing-copy__likes text-secondary">{likes}</p>
           </div>
         </div>
       </div>
 
       {/* Video Description */}
-      <div className="video-player__description-container">
-        <p className="video-player__description">{description}</p>
+      <div className="now-playing-copy__description-container">
+        <p className="now-playing-copy__description">{description}</p>
       </div>
     </div>
   );
