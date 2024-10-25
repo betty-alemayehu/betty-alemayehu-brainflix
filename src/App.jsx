@@ -30,8 +30,10 @@ export default function App() {
     <div className="app">
       <NavBar />
       <VideoPlayer currentVideo={currentVideo} />
+
       <NowPlayingCopy currentVideo={currentVideo} />
       <CommentForm currentVideo={currentVideo} />
+
       <NextVideos
         videos={filteredNextVideos}
         onSelectVideo={handleVideoSelect}
