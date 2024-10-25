@@ -26,6 +26,7 @@
     border: 0.0625rem solid $Mercury; //update color with variable
     border-radius: 0.25rem;
     transition: border-color 0.5s;
+    background-color: $Alabaster;
 
     &:focus {
       border: 0.125rem solid $BrainFlix-Blue;

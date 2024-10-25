@@ -18,9 +18,11 @@
   }
 
   &__form-textarea {
-    border: 0.125rem solid $Mercury;
+    border: 0.0625rem solid $Mercury;
     border-radius: 0.25rem;
     transition: border-color 0.5s;
+    padding: $padding-spacing-base-unit;
+    background-color: $Alabaster;
 
     &:focus {
       border: 0.125rem solid $BrainFlix-Blue;
