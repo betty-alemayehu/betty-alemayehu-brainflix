@@ -38,7 +38,7 @@ p {
 .logo-icon {
   max-width: 7.5rem;
   max-height: 1.5625rem;
-  margin: $gutter-mobile 0;
+  // margin: $gutter-mobile 0;
 }
 
 .avatar {
@@ -60,7 +60,7 @@ p {
 button {
   flex-grow: 1;
   padding: 0 0.625rem; /* Making space for the icon on the left */
-  margin: $gutter-mobile 0;
+  // margin: $gutter-mobile 0;
   border-radius: 0.25rem;
   border: none;
   width: 100%;

@@ -16,6 +16,17 @@
   }
 }
 
+// Container padding
+@mixin containerPadding {
+  padding: $padding-spacing-base-unit;
+  @include tablet {
+    padding: $padding-spacing-base-unit * 2;
+  }
+  @include desktop {
+    padding: $padding-spacing-base-unit * 4;
+  }
+}
+
 //Font-face setup
 //Font-Regular
 @font-face {

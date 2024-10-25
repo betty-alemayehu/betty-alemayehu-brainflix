@@ -1,7 +1,11 @@
+@import "/src/styles/partials/mixins";
+@import "/src/styles/partials/variables";
+@import "/src/styles/partials/global";
 .next-videos {
   display: flex;
   flex-direction: column;
   width: 100%;
+  @include containerPadding;
 
   &__card {
     display: flex;

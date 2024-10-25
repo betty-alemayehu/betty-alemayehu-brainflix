@@ -7,6 +7,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: $padding-spacing-base-unit;
+  @include containerPadding;
 
   //switch to row for tablet/desktop
   @include tablet {
