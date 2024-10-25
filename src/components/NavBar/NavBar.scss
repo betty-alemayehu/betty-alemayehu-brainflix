@@ -23,17 +23,17 @@
   &__search {
     flex-grow: 1;
     padding: 0.625rem 0.625rem 0.625rem 2.5rem; /* Making space for the icon on the left */
-    border: 2px solid red; //update color with variable
-    border-radius: 4px;
+    border: 0.125rem solid $error-state-color; //update color with variable
+    border-radius: 0.25rem;
   }
 
   &__search-icon {
     position: absolute;
-    left: 10px;
+    left: 0.625rem;
     top: 50%;
     transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 
   &__user-icon {
@@ -53,10 +53,10 @@
   }
   &__button-icon {
     position: absolute;
-    left: 10px;
+    left: 0.625rem;
     top: 50%;
     transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 }
