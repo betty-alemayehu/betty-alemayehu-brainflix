@@ -8,22 +8,34 @@ import NowPlayingCopy from "./components/NowPlayingCopy/NowPlayingCopy";
 import CommentForm from "./components/CommentForm/CommentForm";
 import NextVideos from "./components/NextVideos/NextVideos";
 
-function App() {
-  const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
-  const [nextVideos, setNextVideo] = useState(videos);
+export default function App() {
+  const [currentVideoId, setCurrentVideoId] = useState(videos[0].id);
 
-  const filteredNextVideos = nextVideos.filter(
+  //matching video id in seperate JSONs to set current video
+  const currentVideo = videoDetails.find(
+    (video) => video.id === currentVideoId
+  );
+
+  //filtering the current video out of the next videos array using an id
+  const filteredNextVideos = videos.filter(
     (video) => video.id !== currentVideo.id
   );
+
+  // Update the state with the selected video ID from OnClick
+  const handleVideoSelect = (id) => {
+    setCurrentVideoId(id);
+  };
+
   return (
     <div className="app">
       <NavBar />
       <VideoPlayer currentVideo={currentVideo} />
       <NowPlayingCopy currentVideo={currentVideo} />
       <CommentForm currentVideo={currentVideo} />
-      <NextVideos videos={filteredNextVideos} />
+      <NextVideos
+        videos={filteredNextVideos}
+        onSelectVideo={handleVideoSelect}
+      />
     </div>
   );
 }
-
-export default App;

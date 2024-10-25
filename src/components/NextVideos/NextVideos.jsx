@@ -4,18 +4,22 @@ import "./NextVideos.scss";
 // Test image icons
 const userIcon = "src/assets/images/Icons/views.svg";
 
-export default function NextVideos({ videos }) {
+export default function NextVideos({ videos, onSelectVideo }) {
   return (
     <div className="next-videos">
       {/* Next Videos Section */}
       <h2 className="label">Next Videos</h2>
       <ul className="next-videos__list">
         {videos.map((video) => (
-          <li key={video.id} className="next-videos__card">
+          <li
+            key={video.id}
+            className="next-videos__card"
+            onClick={() => onSelectVideo(video.id)}
+          >
             <div className="next-videos__thumbnail-wrapper">
               <img
                 src={video.image}
-                alt="video thumbnail image"
+                alt={video.title}
                 className="next-videos__thumbnail"
               />
             </div>

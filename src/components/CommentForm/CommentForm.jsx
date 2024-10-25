@@ -15,7 +15,7 @@ export default function CommentForm({ currentVideo }) {
     const newComment = event.target.elements["new-comment"].value.trim(); // Get value directly from the form
 
     if (newComment) {
-      console.log("Comment submitted via Browser:", newComment); // Log the new comment to the console
+      console.log("Comment submitted via Browser:", newComment); // Test log the new comment to the console
       event.target.reset(); // Clear the textarea after submitting
     }
   };
