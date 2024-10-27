@@ -1,10 +1,28 @@
+@import "/src/styles/partials/mixins";
+@import "/src/styles/partials/variables";
+@import "/src/styles/partials/global";
+
 .video-player {
+  background-color: $BrainFlix-DarkBlack;
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  justify-content: center;
+  width: 100vw;
+  overflow: hidden;
+
+  &__video-container {
+    aspect-ratio: 16/9;
+    background-color: $BrainFlix-DarkBlack;
+    width: 100%;
+    max-width: 45rem; //720px so it doesn't distort on larger devices
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
 
   &__video {
     width: 100%;
-    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }
