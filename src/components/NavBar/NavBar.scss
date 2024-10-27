@@ -12,7 +12,14 @@
   //switch to row for tablet/desktop
   @include tablet {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: $gutter-tablet-desktop;
+  }
+
+  &__logo {
+    @include tablet {
+      margin-right: auto !important;
+    }
   }
 
   &__search-container {
@@ -21,6 +28,10 @@
     align-items: center;
     width: 100%;
     gap: $gutter-mobile;
+    min-width: 15rem;
+    @include tablet {
+      max-width: 15rem;
+    }
   }
 
   &__search {
@@ -30,6 +41,7 @@
     border-radius: 0.25rem;
     transition: border-color 0.5s;
     background-color: $Alabaster;
+    min-height: 2.5rem;
 
     &:focus {
       border: 0.125rem solid $BrainFlix-Blue;
