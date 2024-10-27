@@ -33,7 +33,6 @@
   &__stats {
     display: flex;
     flex-direction: column;
-    gap: $padding-spacing-base-unit;
     @include tablet {
       flex-direction: row;
       gap: $gutter-tablet-desktop;
