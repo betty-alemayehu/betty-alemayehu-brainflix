@@ -11,6 +11,12 @@
   &__form-area {
     display: flex;
     flex-direction: row;
+    border-bottom: 0.0625rem solid $Mercury;
+    gap: $gutter-mobile;
+  }
+
+  &__user-icon {
+    margin-top: $padding-spacing-base-unit * 4;
   }
 
   &__form {
@@ -55,6 +61,17 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    border-bottom: 0.0625rem solid $Mercury;
+    padding-bottom: $gutter-mobile;
+    gap: $gutter-mobile;
+  }
+  &__user-icon-wrapper {
+    margin-top: $gutter-mobile;
+  }
+  &__name-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   &__user-icon-wrapper {

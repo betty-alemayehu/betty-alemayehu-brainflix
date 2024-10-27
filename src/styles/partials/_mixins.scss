@@ -72,6 +72,9 @@
   font-weight: $font-weight-demi;
   text-transform: uppercase;
   color: $Silver;
+  padding-top: $gutter-mobile;
+  padding-bottom: $padding-spacing-base-unit;
+
   @include tablet {
     font-size: 0.75rem;
     line-height: 1.25rem;
