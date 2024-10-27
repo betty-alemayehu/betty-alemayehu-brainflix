@@ -28,16 +28,33 @@ export default function App() {
 
   return (
     <div className="app">
-      <NavBar />
-      <VideoPlayer currentVideo={currentVideo} />
+      <header className="app__header">
+        <NavBar />
+      </header>
 
-      <NowPlayingCopy currentVideo={currentVideo} />
-      <CommentForm currentVideo={currentVideo} />
+      <main className="app__main-content">
+        <section className="app__video-player">
+          <VideoPlayer currentVideo={currentVideo} />
+        </section>
 
-      <NextVideos
-        videos={filteredNextVideos}
-        onSelectVideo={handleVideoSelect}
-      />
+        <div className="app__layout">
+          <div className="app__video-copy">
+            <section className="app__now-playing">
+              <NowPlayingCopy currentVideo={currentVideo} />
+            </section>
+
+            <section className="app__comments">
+              <CommentForm currentVideo={currentVideo} />
+            </section>
+          </div>
+          <aside className="app__next-videos">
+            <NextVideos
+              videos={filteredNextVideos}
+              onSelectVideo={handleVideoSelect}
+            />
+          </aside>
+        </div>
+      </main>
     </div>
   );
 }

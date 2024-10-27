@@ -7,7 +7,9 @@
   flex-direction: column;
   width: 100%;
   @include containerPadding;
-
+  @include desktop {
+    padding-right: 0;
+  }
   &__details {
     display: flex;
     flex-direction: row;
@@ -19,6 +21,9 @@
     @include tablet {
       justify-content: space-between;
       border-top: none;
+    }
+    @include desktop {
+      padding-right: $gutter-tablet-desktop;
     }
   }
 
@@ -36,6 +41,12 @@
     @include tablet {
       flex-direction: row;
       gap: $gutter-tablet-desktop;
+    }
+  }
+
+  &__description-container {
+    @include desktop {
+      padding-right: $gutter-tablet-desktop;
     }
   }
 }

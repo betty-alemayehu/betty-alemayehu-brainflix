@@ -7,6 +7,9 @@
   width: 100%;
   margin-bottom: $gutter-mobile * 2;
   @include containerPadding;
+  @include desktop {
+    padding-left: $gutter-tablet-desktop;
+  }
 
   &__list {
     display: flex;
@@ -22,6 +25,8 @@
 
   &__thumbnail-wrapper {
     max-width: 6rem;
+    width: 6rem;
+
     display: flex;
     align-items: center;
     justify-content: center;

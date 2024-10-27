@@ -1,6 +1,20 @@
-//why doesn't this work for the children??
-//importing directly to children works fine
+@import "/src/styles/partials/mixins";
+@import "/src/styles/partials/variables";
+@import "/src/styles/partials/global";
 
-// @import "/src/styles/partials/mixins";
-// @import "/src/styles/partials/variables";
-// @import "/src/styles/partials/global";
+.app {
+  display: flex;
+  flex-direction: column;
+
+  &__layout {
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  &__next-videos {
+    @include desktop {
+      border-left: 0.0625rem solid $Mercury;
+    }
+  }
+}
