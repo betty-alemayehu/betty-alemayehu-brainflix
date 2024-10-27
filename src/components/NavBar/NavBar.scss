@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: $padding-spacing-base-unit;
+  gap: $padding-spacing-base-unit * 2;
   @include containerPadding;
 
   //switch to row for tablet/desktop
@@ -20,6 +20,8 @@
     position: relative;
     display: flex;
     align-items: center;
+    width: 100%;
+    gap: $gutter-mobile;
   }
 
   &__search {

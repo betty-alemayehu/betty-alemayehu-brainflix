@@ -18,12 +18,12 @@
 
 // Container padding
 @mixin containerPadding {
-  padding: $padding-spacing-base-unit;
+  padding: $padding-spacing-base-unit * 2;
   @include tablet {
-    padding: $padding-spacing-base-unit * 2;
+    padding: $padding-spacing-base-unit * 4;
   }
   @include desktop {
-    padding: $padding-spacing-base-unit * 4;
+    padding: $padding-spacing-base-unit * 6;
   }
 }
 
