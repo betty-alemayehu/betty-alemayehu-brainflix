@@ -13,10 +13,19 @@
     flex-direction: row;
     border-bottom: 0.0625rem solid $Mercury;
     gap: $gutter-mobile;
+    @include tablet {
+      gap: $gutter-tablet-desktop;
+      padding-bottom: $gutter-tablet-desktop;
+    }
   }
 
   &__user-icon {
     margin-top: $padding-spacing-base-unit * 4;
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-end;
+    }
   }
 
   &__form {
@@ -25,12 +34,22 @@
     width: 100%;
   }
 
+  &__inputs {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      gap: $gutter-tablet-desktop;
+    }
+  }
   &__textarea {
     border: 0.0625rem solid $Mercury;
     border-radius: 0.25rem;
     transition: border-color 0.5s;
     padding: $padding-spacing-base-unit;
     background-color: $Alabaster;
+    width: 100%;
+    height: 6rem;
 
     &:focus {
       border: 0.125rem solid $BrainFlix-Blue;
@@ -42,6 +61,10 @@
 
     &.error {
       border-color: $error-state-color;
+    }
+
+    @include tablet {
+      height: 2.5rem;
     }
   }
 
@@ -64,10 +87,11 @@
     border-bottom: 0.0625rem solid $Mercury;
     padding-bottom: $gutter-mobile;
     gap: $gutter-mobile;
+    @include tablet {
+      gap: $gutter-tablet-desktop;
+    }
   }
-  &__user-icon-wrapper {
-    margin-top: $gutter-mobile;
-  }
+
   &__name-date {
     display: flex;
     flex-direction: row;
@@ -75,6 +99,7 @@
   }
 
   &__user-icon-wrapper {
+    margin-top: $gutter-mobile;
     position: relative;
     min-width: 2.25rem;
     min-height: 2.25rem;
@@ -83,6 +108,7 @@
     border-radius: 50%;
     overflow: hidden; /* Ensures content stays within the circular bounds */
     @include tablet {
+      gap: $gutter-tablet-desktop;
       min-width: 2.5rem;
       min-height: 2.5rem;
       max-width: 2.5rem;

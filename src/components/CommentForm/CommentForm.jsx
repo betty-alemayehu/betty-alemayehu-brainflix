@@ -57,23 +57,29 @@ export default function CommentForm({ currentVideo }) {
             >
               <h2>Join the Conversation</h2>
             </label>
-            <textarea
-              required
-              id="new-comment"
-              name="new-comment" // Using name to access the value via event.target.elements
-              value={commentValue}
-              onChange={handleInputChange}
-              className={`comment-form__textarea ${isError ? "error" : ""}`}
-              placeholder="Add a new comment"
-            ></textarea>
-            <button type="submit" className="comment-form__submit">
-              <img
-                src={commentIcon}
-                alt="Add comment icon"
-                className="comment-form__submit-icon"
-              />
-              <h4>Comment</h4>
-            </button>
+            <div className="comment-form__inputs">
+              <textarea
+                required
+                id="new-comment"
+                name="new-comment" // Using name to access the value via event.target.elements
+                value={commentValue}
+                onChange={handleInputChange}
+                className={`comment-form__textarea ${isError ? "error" : ""}`}
+                placeholder="Add a new comment"
+              ></textarea>
+              <button
+                name="submit"
+                type="submit"
+                className="comment-form__submit"
+              >
+                <img
+                  src={commentIcon}
+                  alt="Add comment icon"
+                  className="comment-form__submit-icon"
+                />
+                <h4>Comment</h4>
+              </button>
+            </div>
           </form>
         </div>
         {/* Pulling comments from JSON Data */}
