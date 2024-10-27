@@ -63,12 +63,12 @@ button {
   border-radius: 0.25rem;
   border: none;
   width: 100%;
-  height: min-content;
+  height: 2.5rem;
   background-color: $BrainFlix-Blue;
   margin: $gutter-mobile 0;
 
   @include tablet {
-    min-width: 9.375rem;
+    max-width: 9.375rem;
     padding: 0 2rem;
     margin: $gutter-tablet-desktop 0;
   }
