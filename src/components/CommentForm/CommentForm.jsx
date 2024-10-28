@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import "./CommentForm.scss";
+import { formatDistanceToNow } from "date-fns";
 
 // Test image icons
 const userIcon = "src/assets/images/Mohan-muruge.jpg";
@@ -96,8 +97,11 @@ export default function CommentForm({ currentVideo }) {
               <div className="comment-form__comment-copy">
                 <div className="comment-form__name-date">
                   <h3 className="comment-form__name">{comment.name}</h3>
+                  {/* Sprint 1 Diving deeper: imported date formatter (formatDistanceToNow), converting the previous toLocaleDateString to a more refined approach */}
                   <p className="comment-form__date text-secondary">
-                    {new Date(comment.timestamp).toLocaleDateString()}
+                    {formatDistanceToNow(new Date(comment.timestamp), {
+                      addSuffix: true,
+                    })}
                   </p>
                 </div>
                 <p className="comment-form__text">{comment.comment}</p>

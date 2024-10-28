@@ -54,8 +54,8 @@
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: $font-weight-bold;
-  padding-top: $padding-spacing-base-unit;
-  padding-bottom: 1rem;
+  padding-top: $padding-spacing-base-unit * 3;
+  padding-bottom: $padding-spacing-base-unit * 2;
 
   @include tablet {
     font-size: 2.0625rem;
