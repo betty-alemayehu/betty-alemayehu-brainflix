@@ -28,8 +28,8 @@
   }
 
   &__thumbnail-wrapper {
-    max-width: 6rem;
-    width: 6rem;
+    max-width: 6.25rem;
+    min-width: 6.25rem;
 
     display: flex;
     align-items: center;
