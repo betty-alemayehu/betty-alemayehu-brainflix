@@ -24,6 +24,7 @@
     flex-direction: row;
     gap: $gutter-mobile;
     max-height: 4rem;
+    min-height: 4rem;
   }
 
   &__thumbnail-wrapper {
