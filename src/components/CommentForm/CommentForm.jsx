@@ -65,7 +65,9 @@ export default function CommentForm({ currentVideo }) {
                 name="new-comment" // Using name to access the value via event.target.elements
                 value={commentValue}
                 onChange={handleInputChange}
-                className={`comment-form__textarea ${isError ? "error" : ""}`}
+                className={`comment-form__textarea ${
+                  isError ? "comment-form__error" : ""
+                }`}
                 placeholder="Add a new comment"
               ></textarea>
               <button
