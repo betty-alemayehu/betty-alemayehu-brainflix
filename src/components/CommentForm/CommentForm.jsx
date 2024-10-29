@@ -2,10 +2,8 @@ import { useState } from "react";
 import React from "react";
 import "./CommentForm.scss";
 import { formatDistanceToNow } from "date-fns";
-
-// Test image icons
-const userIcon = "src/assets/images/Mohan-muruge.jpg";
-const commentIcon = "src/assets/images/Icons/add_comment.svg";
+import userIcon from "../../assets/images/Mohan-muruge.jpg";
+import commentIcon from "../../assets/images/Icons/add_comment.svg";
 
 export default function CommentForm({ currentVideo }) {
   const { comments } = currentVideo;

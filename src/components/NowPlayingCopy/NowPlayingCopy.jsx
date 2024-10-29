@@ -1,10 +1,8 @@
 import React from "react";
 import "./NowPlayingCopy.scss";
 import "../../App.jsx";
-
-//test image icons
-const viewsIcon = "src/assets/images/Icons/views.svg";
-const likeIcon = "src/assets/images/Icons/likes.svg";
+import viewsIcon from "../../assets/images/Icons/views.svg";
+import likeIcon from "../../assets/images/Icons/likes.svg";
 
 export default function NowPlayingCopy({ currentVideo }) {
   const { title, channel, timestamp, views, likes, description } = currentVideo;

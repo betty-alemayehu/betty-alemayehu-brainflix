@@ -1,9 +1,6 @@
 import React from "react";
 import "./NextVideos.scss";
 
-// Test image icons
-const userIcon = "src/assets/images/Icons/views.svg";
-
 export default function NextVideos({ videos, onSelectVideo }) {
   return (
     <div className="next-videos">

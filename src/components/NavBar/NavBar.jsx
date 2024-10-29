@@ -1,11 +1,10 @@
 import { useState } from "react";
 import React from "react";
 import "./NavBar.scss";
-
-const logo = "src/assets/images/Logo/BrainFlix-logo.svg";
-const searchIcon = "src/assets/images/Icons/search.svg";
-const userIcon = "src/assets/images/Mohan-muruge.jpg";
-const uploadIcon = "src/assets/images/Icons/upload.svg";
+import logo from "../../assets/images/Logo/BrainFlix-logo.svg";
+import searchIcon from "../../assets/images/Icons/search.svg";
+import userIcon from "../../assets/images/Mohan-muruge.jpg";
+import uploadIcon from "../../assets/images/Icons/upload.svg";
 
 export default function NavBar() {
   const [searchValue, setSearchValue] = useState("");
