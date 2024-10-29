@@ -25,7 +25,11 @@ export default function NavBar() {
         src={logo}
         alt="BrainFlix Logo"
       />
-      <div className={`nav-bar__search-container ${isError ? "error" : ""}`}>
+      <div
+        className={`nav-bar__search-container ${
+          isError ? "nav-bar__error" : ""
+        }`}
+      >
         <img
           src={searchIcon}
           alt="Search Icon"
