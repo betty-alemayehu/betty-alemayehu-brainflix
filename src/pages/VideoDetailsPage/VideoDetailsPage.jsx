@@ -17,10 +17,10 @@ export default function VideoDetailsPage() {
     const fetchVideoDetails = async () => {
       try {
         const videoResponse = await axios.get(
-          `${API_URL}/videos/${videoId}?api_key=${API_KEY}`
+          `${API_URL}videos/${videoId}?api_key=${API_KEY}`
         );
         const videosResponse = await axios.get(
-          `${API_URL}/videos?api_key=${API_KEY}`
+          `${API_URL}videos?api_key=${API_KEY}`
         );
         setCurrentVideo(videoResponse.data);
         setNextVideos(
