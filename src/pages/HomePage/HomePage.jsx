@@ -1,11 +1,11 @@
 import { useState } from "react";
-import videoDetails from "../data/video-details.json";
-import videos from "../data/videos.json";
-import NavBar from "../components/NavBar/NavBar";
-import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
-import NowPlayingCopy from "../components/NowPlayingCopy/NowPlayingCopy";
-import CommentForm from "../components/CommentForm/CommentForm";
-import NextVideos from "../components/NextVideos/NextVideos";
+import videoDetails from "../../data/video-details.json";
+import videos from "../../data/videos.json";
+import NavBar from "../../components/NavBar/NavBar";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+import NowPlayingCopy from "../../components/NowPlayingCopy/NowPlayingCopy";
+import CommentForm from "../../components/CommentForm/CommentForm";
+import NextVideos from "../../components/NextVideos/NextVideos";
 
 export default function HomePage() {
   const [currentVideoId, setCurrentVideoId] = useState(videos[0].id);

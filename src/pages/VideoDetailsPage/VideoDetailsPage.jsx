@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { API_URL, API_KEY } from "../utils";
+import { API_KEY, API_URL } from "../../../utils";
 import axios from "axios";
-import NavBar from "../components/NavBar/NavBar";
-import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
-import NowPlayingCopy from "../components/NowPlayingCopy/NowPlayingCopy";
-import CommentForm from "../components/CommentForm/CommentForm";
-import NextVideos from "../components/NextVideos/NextVideos";
+import NavBar from "../../components/NavBar/NavBar";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+import NowPlayingCopy from "../../components/NowPlayingCopy/NowPlayingCopy";
+import CommentForm from "../../components/CommentForm/CommentForm";
+import NextVideos from "../../components/NextVideos/NextVideos";
 
 export default function VideoDetailsPage() {
   const { videoId } = useParams();
