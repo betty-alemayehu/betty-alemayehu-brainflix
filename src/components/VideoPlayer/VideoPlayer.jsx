@@ -5,6 +5,10 @@ import "../../App.jsx";
 function VideoPlayer({ currentVideo }) {
   const { image, video } = currentVideo;
 
+  if (!currentVideo) {
+    return <p>Loading video...</p>;
+  }
+
   return (
     <div className="video-player">
       {/* Video Section */}

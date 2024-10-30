@@ -7,7 +7,9 @@ import commentIcon from "../../assets/images/Icons/add_comment.svg";
 
 export default function CommentForm({ currentVideo }) {
   const { comments } = currentVideo;
-
+  if (!currentVideo) {
+    return <p>Loading comments...</p>;
+  }
   //Error state for submissions - copied from Nav Bar
   const [commentValue, setCommentValue] = useState("");
   const [isError, setIsError] = useState(false);
