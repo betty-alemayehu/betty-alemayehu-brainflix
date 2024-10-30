@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import React from "react";
 import "./NavBar.scss";
@@ -19,11 +20,10 @@ export default function NavBar() {
 
   return (
     <div className="nav-bar">
-      <img
-        className="nav-bar__logo logo-icon"
-        src={logo}
-        alt="BrainFlix Logo"
-      />
+      {/* inserting link in place of image */}
+      <Link to="/" className="nav-bar__logo logo-icon">
+        <img src={logo} alt="BrainFlix Logo" />
+      </Link>
       <div
         className={`nav-bar__search-container ${
           isError ? "nav-bar__error" : ""
