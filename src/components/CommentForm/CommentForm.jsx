@@ -21,7 +21,6 @@ export default function CommentForm({ currentVideo }) {
     const newComment = event.target.elements["new-comment"].value.trim(); // Get value directly from the form
 
     if (newComment) {
-      console.log("Comment submitted via Browser:", newComment); // Test log the new comment to the console
       //Error state for submissions
       setCommentValue("");
       setIsError(false);
