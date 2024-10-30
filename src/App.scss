@@ -1,6 +1,13 @@
-@import "/src/styles/partials/mixins";
-@import "/src/styles/partials/variables";
-@import "/src/styles/partials/global";
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/global" as *;
+@use "./styles/partials/typography" as *;
+
+// @use "components/CommentForm/CommentForm";
+// @use "components/NavBar/NavBar";
+// @use "components/NextVideos/NextVideos";
+// @use "components/NowPlayingCopy/NowPlayingCopy";
+// @use "components/VideoPlayer/VideoPlayer";
 
 .app {
   display: flex;

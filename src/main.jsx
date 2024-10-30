@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./App.scss";
-import "./styles/partials/_global.scss";
+// import "./styles/partials/_global.scss" as *;
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

@@ -1,3 +1,5 @@
+@use "./variables" as *;
+@use "./mixins" as *;
 //Font-face setup
 //Font-Regular
 @font-face {

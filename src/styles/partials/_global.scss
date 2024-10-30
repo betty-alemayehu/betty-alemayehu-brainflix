@@ -1,6 +1,6 @@
-@import "/src/styles/partials/mixins";
-@import "/src/styles/partials/variables";
-@import "/src/styles/partials/typography";
+@use "./mixins" as *;
+@use "./variables" as *;
+@use "./typography" as *;
 
 // Global style reset
 * {

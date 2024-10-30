@@ -1,6 +1,6 @@
-@import "/src/styles/partials/mixins";
-@import "/src/styles/partials/variables";
-@import "/src/styles/partials/global";
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/global.scss" as *;
 
 .video-player {
   background-color: $BrainFlix-DarkBlack;
