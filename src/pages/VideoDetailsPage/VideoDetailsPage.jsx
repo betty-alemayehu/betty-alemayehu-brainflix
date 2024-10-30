@@ -14,6 +14,14 @@ export default function VideoDetailsPage() {
   const [nextVideos, setNextVideos] = useState([]);
 
   useEffect(() => {
+    if (currentVideo) {
+      document.title = `BrainFlix | ${currentVideo.title}`;
+    } else {
+      document.title = "BrainFlix | Video";
+    }
+  });
+
+  useEffect(() => {
     const fetchVideoDetails = async () => {
       try {
         const videoResponse = await axios.get(

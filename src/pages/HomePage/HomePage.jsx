@@ -13,6 +13,9 @@ export default function HomePage() {
   const [currentVideoId, setCurrentVideoId] = useState(null);
   const [videos, setVideos] = useState([]);
   const [currentVideo, setCurrentVideo] = useState(null);
+  useEffect(() => {
+    document.title = "BrainFlix | Home";
+  }, []);
 
   useEffect(() => {
     const fetchVideos = async () => {
