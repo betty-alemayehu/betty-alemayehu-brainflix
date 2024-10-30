@@ -80,9 +80,18 @@
       }
     }
   }
+
+  &__link {
+    width: 100%;
+    @include tablet {
+      max-width: 9.375rem;
+    }
+  }
+
   &__button {
     position: relative;
   }
+
   &__button-icon {
     position: absolute;
     left: 0.625rem;

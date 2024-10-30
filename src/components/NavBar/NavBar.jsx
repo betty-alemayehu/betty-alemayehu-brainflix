@@ -51,14 +51,17 @@ export default function NavBar() {
         />
       </div>
 
-      <button className="nav-bar__button">
-        <img
-          src={uploadIcon}
-          alt="Search Icon"
-          className="nav-bar__button-icon"
-        />
-        <h4>Upload</h4>
-      </button>
+      {/* inserting link in place of image */}
+      <Link to="/upload" className="nav-bar__link">
+        <button className="nav-bar__button">
+          <img
+            src={uploadIcon}
+            alt="Upload Icon"
+            className="nav-bar__button-icon"
+          />
+          <h4 className="nav-bar__button-copy">Upload</h4>
+        </button>
+      </Link>
       <img
         className="nav-bar__user-icon--tablet avatar"
         src={userIcon}
