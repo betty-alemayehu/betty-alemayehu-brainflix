@@ -7,7 +7,7 @@ import "./App.scss";
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="app">
         <Routes>
           {/* HomePage */}
           <Route path="/" element={<HomePage />} />

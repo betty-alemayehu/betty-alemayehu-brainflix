@@ -1,0 +1,16 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+
+  &__layout {
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  &__next-videos {
+    @include desktop {
+      border-left: 0.0625rem solid $Mercury;
+    }
+  }
+}
