@@ -11,9 +11,6 @@ export default function VideoUploadPage() {
 
   return (
     <div className="video-upload-page">
-      <header className="video-upload-page__header">
-        <NavBar />
-      </header>
       <main className="video-upload-page__content">
         <VideoUpload />
       </main>

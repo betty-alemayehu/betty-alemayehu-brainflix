@@ -7,26 +7,26 @@ import NowPlayingCopy from "../../components/NowPlayingCopy/NowPlayingCopy";
 import CommentForm from "../../components/CommentForm/CommentForm";
 import NextVideos from "../../components/NextVideos/NextVideos";
 
-export default function VideoDetailsPage(videos) {
+export default function VideoDetailsPage({videos}) {
   //document.title
-  useEffect(() => {
-    if (currentVideo) {
-      document.title = `BrainFlix | ${currentVideo.title}`;
-    } else {
-      document.title = "BrainFlix | Video";
-    }
-  });
-  // const { videos } = useParams();
+  // useEffect(() => {
+  //   if (currentVideo) {
+  //     document.title = `BrainFlix | ${currentVideo.title}`;
+  //   } else {
+  //     document.title = "BrainFlix | Video";
+  //   }
+  // });
   //        setVideos(videoData.data.filter((video) => video.id !== videoId));
 
-  if (!currentVideo) return <p>Loading...</p>;
+  // if (!currentVideo) return <p>Loading...</p>;
+  
+  const { videoId } = useParams();
+  const id = videoId ?? videos[0].id
+
+  return <h1>vid deets page! id: {id}</h1>
 
   return (
     <div className="video-details-page">
-      <header className="video-details-page__header">
-        <NavBar />
-      </header>
-
       <main className="video-details-page__main-content">
         <section className="video-details-page__video-player">
           <VideoPlayer currentVideo={currentVideo} />

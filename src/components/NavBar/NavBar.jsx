@@ -19,7 +19,7 @@ export default function NavBar() {
   };
 
   return (
-    <div className="nav-bar">
+    <header className="nav-bar">
       {/* inserting link in place of image */}
       <NavLink to="/" className="nav-bar__logo logo-icon">
         <img src={logo} alt="BrainFlix Logo" />
@@ -67,6 +67,6 @@ export default function NavBar() {
         src={userIcon}
         alt="user icon"
       />
-    </div>
+    </header>
   );
 }
