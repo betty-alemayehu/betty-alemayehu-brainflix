@@ -2,8 +2,10 @@
 import React from "react";
 import uploadThumbnail from "../../assets/images/Upload-video-preview.jpg";
 import "./VideoUpload.scss";
+import { useNavigate } from "react-router-dom";
 
 export default function VideoUpload() {
+  const navigate = useNavigate();
   return (
     <div className="upload-video">
       <form className="upload-video__form">
@@ -60,12 +62,12 @@ export default function VideoUpload() {
           >
             <h4>Publish</h4>
           </button>
-          <button
-            type="button"
+          <h4
             className="upload-video__button upload-video__button--cancel"
+            onClick={() => navigate("/")}
           >
-            <h4>Cancel</h4>
-          </button>
+            Cancel
+          </h4>
         </div>
       </form>
     </div>
@@ -121,12 +123,12 @@ export default function VideoUpload() {
       >
         <h4>Publish</h4>
       </button>
-      <button
-        type="button"
+      <h4
         className="upload-video__button upload-video__button--cancel"
+        onClick={() => navigate("/")}
       >
-        <h4>Cancel</h4>
-      </button>
+        Cancel
+      </h4>
     </div>
   </form>
 </div>;
