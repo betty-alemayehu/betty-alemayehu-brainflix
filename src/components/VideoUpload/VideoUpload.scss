@@ -9,9 +9,9 @@
   border-top: 0.125rem solid $Mercury;
   @include containerPadding;
 
-  &__form {
+  &__form-container {
     //   max-width: 45rem;
-    border: 1px solid black;
+    // border: 1px solid black;
     @include tablet {
       display: flex;
       flex-direction: column;
@@ -27,12 +27,12 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border: 0.0625rem solid $Mercury;
+      //   border: 0.0625rem solid $Mercury;
       border-radius: 0.25rem;
     }
   }
   &__thumbnail {
-    border: 1px solid red;
+    // border: 1px solid red;
     @include tablet {
       width: 50%;
     }
@@ -40,7 +40,7 @@
 
   &__fields {
     width: 100%;
-    border: 1px solid green;
+    // border: 1px solid green;
   }
 
   &__input,
@@ -63,7 +63,7 @@
   }
 
   &__buttons {
-    border: 1px solid blue;
+    // border: 1px solid blue;
     //   max-width: 45rem;
     @include tablet {
       display: flex;
