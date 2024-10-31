@@ -3,16 +3,52 @@ import HomePage from "./pages/HomePage/HomePage";
 import VideoDetailsPage from "./pages/VideoDetailsPage/VideoDetailsPage";
 import VideoUploadPage from "./pages/VideoUploadPage/VideoUploadPage";
 import "./App.scss";
+import { useState, useEffect } from "react";
+import { API_KEY, API_URL } from "../utils";
+import axios from "axios";
 
 export default function App() {
+  const [currentVideo, setCurrentVideo] = useState(null);
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+        const { videoData } = await axios.get(
+          `${API_URL}/videos/${videoId}?api_key=${API_KEY}`
+          // `${API_URL}videos?api_key=${API_KEY}`
+        );
+
+        setCurrentVideo(videoData[0]);
+        setVideos(videoData);
+      } catch (error) {
+        console.error("Error fetching video details:", error);
+      }
+    };
+
+    fetchVideos();
+  }, []);
+
   return (
     <BrowserRouter>
       <div className="app">
         <Routes>
           {/* HomePage */}
-          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/"
+            element={
+              <HomePage
+                currentVideo={currentVideo}
+                videos={videos}
+                setCurrentVideo={setCurrentVideo}
+              />
+            }
+          />
           {/* VideoDetailsPage with dynamic routing */}
-          <Route path="/videos/:videoId" element={<VideoDetailsPage />} />
+          <Route
+            path="/videos/:videoId"
+            element={<VideoDetailsPage videos={videos} />}
+          />
           {/* VideoUploadPage */}
           <Route path="/upload" element={<VideoUploadPage />} />
         </Routes>
@@ -28,7 +64,7 @@ export default function App() {
 // import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 // import NowPlayingCopy from "./components/NowPlayingCopy/NowPlayingCopy";
 // import CommentForm from "./components/CommentForm/CommentForm";
-// import NextVideos from "./components/NextVideos/NextVideos";
+// import Videos from "./components/Videos/Videos";
 
 // export default function App() {
 //   const [currentVideoId, setCurrentVideoId] = useState(videos[0].id);
@@ -39,7 +75,7 @@ export default function App() {
 //   );
 
 //   //filtering the current video out of the next videos array using an id
-//   const filteredNextVideos = videos.filter(
+//   const filteredVideos = videos.filter(
 //     (video) => video.id !== currentVideo.id
 //   );
 
@@ -70,8 +106,8 @@ export default function App() {
 //             </section>
 //           </div>
 //           <aside className="app__next-videos">
-//             <NextVideos
-//               videos={filteredNextVideos}
+//             <Videos
+//               videos={filteredVideos}
 //               onSelectVideo={handleVideoSelect}
 //             />
 //           </aside>

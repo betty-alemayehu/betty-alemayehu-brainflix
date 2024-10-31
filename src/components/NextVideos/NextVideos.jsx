@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import React from "react";
 import "./NextVideos.scss";
 
-export default function NextVideos({ videos, onSelectVideo }) {
+export default function NextVideos({ filteredNextVideos, onSelectVideo }) {
   return (
     <div className="next-videos">
       {/* Next Videos Section */}
       <h2 className="label">Next Videos</h2>
       <ul className="next-videos__list">
-        {videos.map((video) => (
+        {filteredNextVideos.map((video) => (
           <li
             key={video.id}
             className="next-videos__card"

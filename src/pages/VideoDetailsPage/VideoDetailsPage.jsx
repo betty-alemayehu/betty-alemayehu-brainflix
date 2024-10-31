@@ -1,18 +1,14 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { API_KEY, API_URL } from "../../../utils";
-import axios from "axios";
+
 import NavBar from "../../components/NavBar/NavBar";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import NowPlayingCopy from "../../components/NowPlayingCopy/NowPlayingCopy";
 import CommentForm from "../../components/CommentForm/CommentForm";
 import NextVideos from "../../components/NextVideos/NextVideos";
 
-export default function VideoDetailsPage() {
-  const { videoId } = useParams();
-  const [currentVideo, setCurrentVideo] = useState(null);
-  const [nextVideos, setNextVideos] = useState([]);
-
+export default function VideoDetailsPage(videos) {
+  //document.title
   useEffect(() => {
     if (currentVideo) {
       document.title = `BrainFlix | ${currentVideo.title}`;
@@ -20,27 +16,8 @@ export default function VideoDetailsPage() {
       document.title = "BrainFlix | Video";
     }
   });
-
-  useEffect(() => {
-    const fetchVideoDetails = async () => {
-      try {
-        const videoResponse = await axios.get(
-          `${API_URL}videos/${videoId}?api_key=${API_KEY}`
-        );
-        const videosResponse = await axios.get(
-          `${API_URL}videos?api_key=${API_KEY}`
-        );
-        setCurrentVideo(videoResponse.data);
-        setNextVideos(
-          videosResponse.data.filter((video) => video.id !== videoId)
-        );
-      } catch (error) {
-        console.error("Error fetching video details:", error);
-      }
-    };
-
-    fetchVideoDetails();
-  }, [videoId]);
+  // const { videos } = useParams();
+  //        setVideos(videoData.data.filter((video) => video.id !== videoId));
 
   if (!currentVideo) return <p>Loading...</p>;
 
