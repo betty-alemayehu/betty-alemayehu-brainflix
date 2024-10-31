@@ -7,7 +7,7 @@ import NowPlayingCopy from "../../components/NowPlayingCopy/NowPlayingCopy";
 import CommentForm from "../../components/CommentForm/CommentForm";
 import NextVideos from "../../components/NextVideos/NextVideos";
 
-export default function VideoDetailsPage({videos}) {
+export default function VideoDetailsPage({ videos }) {
   //document.title
   // useEffect(() => {
   //   if (currentVideo) {
@@ -19,11 +19,11 @@ export default function VideoDetailsPage({videos}) {
   //        setVideos(videoData.data.filter((video) => video.id !== videoId));
 
   // if (!currentVideo) return <p>Loading...</p>;
-  
-  const { videoId } = useParams();
-  const id = videoId ?? videos[0].id
 
-  return <h1>vid deets page! id: {id}</h1>
+  const { videoId } = useParams();
+  const id = videoId ?? videos[0].id;
+
+  return <h1>vid deets page!!!!! id: {id}</h1>;
 
   return (
     <div className="video-details-page">
