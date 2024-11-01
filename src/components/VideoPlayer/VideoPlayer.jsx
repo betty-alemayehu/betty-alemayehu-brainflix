@@ -2,7 +2,7 @@ import React from "react";
 import "./VideoPlayer.scss";
 // import "../../App.jsx";
 
-function VideoPlayer({ currentVideo }) {
+export default function VideoPlayer({ currentVideo }) {
   const { image, video } = currentVideo;
 
   if (!currentVideo) {
@@ -23,5 +23,3 @@ function VideoPlayer({ currentVideo }) {
     </div>
   );
 }
-
-export default VideoPlayer;

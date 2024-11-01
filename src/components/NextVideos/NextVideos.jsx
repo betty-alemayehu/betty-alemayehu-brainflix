@@ -2,10 +2,11 @@ import { Link, useParams } from "react-router-dom";
 import React from "react";
 import "./NextVideos.scss";
 
-export default function NextVideos({ videos }) {
-  const { videoId } = useParams();
+export default function NextVideos({ videos, currentVideo }) {
+  // const { videoId } = useParams();
 
-  const filteredVideos = videos.filter((video) => video.id !== videoId);
+  const filteredVideos = videos.filter((video) => video.id !== currentVideo.id);
+
   return (
     <div className="next-videos">
       {/* Next Videos Section */}

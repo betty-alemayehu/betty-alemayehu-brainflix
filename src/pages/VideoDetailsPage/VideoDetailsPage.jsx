@@ -69,7 +69,7 @@ export default function VideoDetailsPage({ videos }) {
             </section>
           </div>
           <aside className="video-details-page__next-videos">
-            <NextVideos videos={videos} />
+            <NextVideos videos={videos} currentVideo={currentVideo} />
           </aside>
         </div>
       </main>
