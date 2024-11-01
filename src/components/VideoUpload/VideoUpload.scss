@@ -1,46 +1,67 @@
 // components/VideoUpload/VideoUpload.scss
 @use "../../styles/partials/mixins.scss" as *;
 @use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
 
 .upload-video {
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-top: 0.125rem solid $Mercury;
+  margin-bottom: $gutter-mobile;
   @include containerPadding;
+  @include tablet {
+    margin-bottom: $gutter-tablet-desktop;
+  }
 
   &__form-container {
     //   max-width: 45rem;
     // border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    // gap: $gutter-mobile;
     @include tablet {
-      display: flex;
       flex-direction: column;
     }
     @include desktop {
       flex-direction: row;
+      gap: $gutter-tablet-desktop;
     }
   }
   &__thumbnail {
     width: 100%;
-    height: auto;
+    height: 100%;
+    @include tablet {
+      width: 50%;
+    }
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       //   border: 0.0625rem solid $Mercury;
       border-radius: 0.25rem;
-    }
-  }
-  &__thumbnail {
-    // border: 1px solid red;
-    @include tablet {
-      width: 50%;
+      flex-grow: 1;
+      display: flex;
     }
   }
 
   &__fields {
     width: 100%;
     // border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+  }
+
+  &__field {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  &__field2 {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   &__input,
@@ -59,7 +80,10 @@
 
   &__textarea {
     resize: none;
-    height: 6rem;
+    // margin-bottom: $padding-spacing-base-unit;
+    @include desktop {
+      height: 100%;
+    }
   }
 
   &__buttons {
@@ -68,18 +92,47 @@
     @include tablet {
       display: flex;
       flex-direction: row-reverse;
+      align-items: center;
     }
   }
   &__button--cancel {
     color: $BrainFlix-Blue;
-    border: 1px solid red;
+    text-transform: uppercase;
+    // border: 1px solid red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    text-decoration: none;
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+    font-weight: $font-weight-bold;
+    padding: 0.625rem; /* Making space for the icon on the left */
+    height: 2.5rem;
+
+    @include tablet {
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      max-width: 9.375rem;
+      width: 9.375rem;
+
+      max-width: 9.375rem;
+      padding: 0 2rem;
+      margin: $gutter-mobile 0;
+    }
   }
 }
+// 'button {
+//   flex-grow: 1;
+//   padding: 0.625rem; /* Making space for the icon on the left */
+//   border-radius: 0.25rem;
+//   border: none;
+//   width: 100%;
+//   background-color: $BrainFlix-Blue;
 
+//   @include tablet {
+//   }
+// }'
 // .video-upload {
 //   display: flex;
 //   flex-direction: column;
