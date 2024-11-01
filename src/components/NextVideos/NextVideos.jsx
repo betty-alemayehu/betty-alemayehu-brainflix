@@ -1,14 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import React from "react";
 import "./NextVideos.scss";
 
-export default function NextVideos({ filteredNextVideos, onSelectVideo }) {
+export default function NextVideos({ videos }) {
+  const { videoId } = useParams();
+
+  const filteredVideos = videos.filter((video) => video.id !== videoId);
   return (
     <div className="next-videos">
       {/* Next Videos Section */}
       <h2 className="label">Next Videos</h2>
       <ul className="next-videos__list">
-        {filteredNextVideos.map((video) => (
+        {filteredVideos.map((video) => (
           <li
             key={video.id}
             className="next-videos__card"

@@ -1,6 +1,7 @@
-import { useParams } from "react-router-dom";
+import axios from "axios";
 import { useState, useEffect } from "react";
-
+import { useParams } from "react-router-dom";
+import { API_URL, API_KEY } from "../../../utils";
 import NavBar from "../../components/NavBar/NavBar";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import NowPlayingCopy from "../../components/NowPlayingCopy/NowPlayingCopy";
@@ -23,7 +24,32 @@ export default function VideoDetailsPage({ videos }) {
   const { videoId } = useParams();
   const id = videoId ?? videos[0].id;
 
-  return <h1>vid deets page!!!!! id: {id}</h1>;
+  const [currentVideo, setCurrentVideo] = useState(null);
+
+  async function getCurrentVideo() {
+    try {
+      const { data } = await axios.get(
+        `${API_URL}/videos/${id}?api_key=${API_KEY}`
+      );
+      setCurrentVideo(data);
+    } catch (error) {
+      console.log("Error fetching in VideoDetailsPage: ", error);
+    }
+  }
+
+  useEffect(() => {
+    getCurrentVideo();
+  }, [videoId]);
+
+  if (!currentVideo) {
+    return <p>Loading...</p>;
+  }
+
+  // if (videos.length === 0) {
+  //   return <div>loading videos...</div>;
+  // }
+
+  // return <h1>vid deets page!!!!! id: {id}</h1>;
 
   return (
     <div className="video-details-page">
@@ -43,10 +69,7 @@ export default function VideoDetailsPage({ videos }) {
             </section>
           </div>
           <aside className="video-details-page__next-videos">
-            <NextVideos
-              videos={nextVideos}
-              onSelectVideo={(id) => setCurrentVideo(id)}
-            />
+            <NextVideos videos={videos} />
           </aside>
         </div>
       </main>

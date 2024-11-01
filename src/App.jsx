@@ -39,7 +39,10 @@ export default function App() {
           {/* HomePage */}
           <Route path="/" element={<VideoDetailsPage videos={videos} />} />
           {/* VideoDetailsPage with dynamic routing */}
-          <Route path="/videos/:videoId" element={<VideoDetailsPage videos={videos} />} />
+          <Route
+            path="/videos/:videoId"
+            element={<VideoDetailsPage videos={videos} />}
+          />
           {/* VideoUploadPage */}
           <Route path="/upload" element={<VideoUploadPage />} />
         </Routes>

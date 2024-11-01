@@ -1,6 +1,6 @@
 import React from "react";
 import "./VideoPlayer.scss";
-import "../../App.jsx";
+// import "../../App.jsx";
 
 function VideoPlayer({ currentVideo }) {
   const { image, video } = currentVideo;
