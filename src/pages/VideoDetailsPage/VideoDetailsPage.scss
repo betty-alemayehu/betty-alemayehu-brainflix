@@ -1,0 +1,21 @@
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/global" as *;
+@use "/src/styles/partials/typography" as *;
+
+.video-details-page {
+  display: flex;
+  flex-direction: column;
+
+  &__layout {
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  &__next-videos {
+    @include desktop {
+      border-left: 0.0625rem solid $Mercury;
+    }
+  }
+}
