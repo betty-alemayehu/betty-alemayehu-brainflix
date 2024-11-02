@@ -56,7 +56,7 @@ export default function VideoUpload() {
             {/* Video Thumbnail */}
             <div className="upload-video__field">
               <label htmlFor="thumbnail" className="upload-video__label label">
-                <h2>Video thumbnail</h2>
+                Video thumbnail
               </label>
               <div className="upload-video__thumbnail-image">
                 <img src={uploadThumbnail} alt="Video thumbnail placeholder" />
@@ -65,9 +65,9 @@ export default function VideoUpload() {
           </div>
           <div className="upload-video__fields">
             {/* Video Title */}
-            <div className="upload-video__field1">
+            <div className="upload-video__field--title">
               <label htmlFor="title" className="upload-video__label label">
-                <h2>Title your video</h2>
+                Title your video
               </label>
               <input
                 id="titleP"
@@ -82,12 +82,12 @@ export default function VideoUpload() {
               />
             </div>
             {/* Video Description */}
-            <div className="upload-video__field2">
+            <div className="upload-video__field">
               <label
                 htmlFor="description"
                 className="upload-video__label label"
               >
-                <h2>Add a video description</h2>
+                Add a video description
               </label>
               <textarea
                 required

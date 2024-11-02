@@ -55,7 +55,7 @@ export default function CommentForm({ currentVideo }) {
               htmlFor="new-comment"
               className="comment-form__form-label label"
             >
-              <h2>Join the Conversation</h2>
+              Join the Conversation
             </label>
             <div className="comment-form__inputs">
               <textarea

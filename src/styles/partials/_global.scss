@@ -16,7 +16,8 @@ h1 {
   @include h1PageHeader;
 }
 
-h2 {
+h2,
+.label {
   @include h2SectionHeader;
 }
 
