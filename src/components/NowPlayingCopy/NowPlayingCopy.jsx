@@ -3,6 +3,7 @@ import "./NowPlayingCopy.scss";
 import "../../App.jsx";
 import viewsIcon from "../../assets/images/Icons/views.svg";
 import likeIcon from "../../assets/images/Icons/likes.svg";
+import { formatDistanceToNow } from "date-fns";
 
 export default function NowPlayingCopy({ currentVideo }) {
   const { title, channel, timestamp, views, likes, description } = currentVideo;
@@ -19,7 +20,10 @@ export default function NowPlayingCopy({ currentVideo }) {
         <div className="now-playing-copy__publisher-date">
           <h3 className="now-playing-copy__publisher">{channel}</h3>
           <p className="now-playing-copy__date text-secondary">
-            {new Date(timestamp).toLocaleDateString()}
+            {/* {new Date(timestamp).toLocaleDateString()} */}
+            {formatDistanceToNow(new Date(timestamp), {
+              addSuffix: true,
+            })}
           </p>
         </div>
 

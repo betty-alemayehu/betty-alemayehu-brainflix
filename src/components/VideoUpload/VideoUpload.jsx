@@ -4,6 +4,7 @@ import uploadThumbnail from "../../assets/images/Upload-video-preview.jpg";
 import "./VideoUpload.scss";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import uploadIcon from "../../assets/Images/Icons/upload.svg";
 
 export default function VideoUpload() {
   const navigate = useNavigate();
@@ -111,6 +112,11 @@ export default function VideoUpload() {
             type="submit"
             className="upload-video__button upload-video__button--publish"
           >
+            <img
+              src={uploadIcon}
+              alt="Upload Icon"
+              className="upload-video__button-icon"
+            />
             <h4>Publish</h4>
           </button>
           <Link
