@@ -1,5 +1,5 @@
 // components/VideoUpload/VideoUpload.jsx
-import React from "react";
+import React, { useState } from "react";
 import uploadThumbnail from "../../assets/images/Upload-video-preview.jpg";
 import "./VideoUpload.scss";
 import { useNavigate } from "react-router-dom";
@@ -8,11 +8,43 @@ import { Link } from "react-router-dom";
 export default function VideoUpload() {
   const navigate = useNavigate();
 
+  const [description, setDescription] = useState("");
+  const [titleP, setTitleP] = useState("");
+  const [titleError, setTitleError] = useState(false);
+  const [descriptionError, setDescriptionError] = useState(false);
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    alert("Video successfully uploaded!");
-    navigate("/");
+    // Check for missing inputs and set error states accordingly
+    const isTitleValid = titleP.trim() !== "";
+    const isDescriptionValid = description.trim() !== "";
+
+    if (isTitleValid && isDescriptionValid) {
+      alert("Video successfully uploaded!");
+      setTitleP("");
+      setDescription("");
+      setTitleError(false);
+      setDescriptionError(false);
+      navigate("/");
+    } else {
+      setTitleError(!isTitleValid);
+      setDescriptionError(!isDescriptionValid);
+    }
+  };
+
+  const handleDescriptionChange = (event) => {
+    setDescription(event.target.value);
+    if (event.target.value.trim()) {
+      setDescriptionError(false); // Remove error when input is valid
+    }
+  };
+
+  const handleTitlePChange = (event) => {
+    setTitleP(event.target.value);
+    if (event.target.value.trim()) {
+      setTitleError(false); // Remove error when input is valid
+    }
   };
 
   return (
@@ -38,9 +70,13 @@ export default function VideoUpload() {
                 <h2>Title your video</h2>
               </label>
               <input
-                id="title"
-                type="text"
-                className="upload-video__input"
+                id="titleP"
+                type="titleP"
+                value={titleP}
+                onChange={handleTitlePChange}
+                className={`upload-video__input ${
+                  titleError ? "upload-video__error" : ""
+                }`}
                 placeholder="Add a title to your video"
                 required
               />
@@ -54,11 +90,17 @@ export default function VideoUpload() {
                 <h2>Add a video description</h2>
               </label>
               <textarea
-                id="description"
-                className="upload-video__textarea"
-                placeholder="Add a description to your video"
-                // rows="4"
                 required
+                id="description"
+                name="description"
+                value={description}
+                onChange={handleDescriptionChange}
+                // className="upload-video__textarea"
+                className={`upload-video__textarea ${
+                  descriptionError ? "upload-video__error" : ""
+                }`}
+                placeholder="Add a description to your video"
+                rows="4"
               />
             </div>
           </div>

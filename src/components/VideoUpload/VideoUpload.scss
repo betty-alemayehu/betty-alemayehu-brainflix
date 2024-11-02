@@ -81,9 +81,24 @@
   &__textarea {
     resize: none;
     // margin-bottom: $padding-spacing-base-unit;
+    border: 0.0625rem solid $Mercury;
+
+    transition: border-color 0.5s;
+
+    &:focus {
+      border: 0.125rem solid $BrainFlix-Blue;
+    }
+
+    &:not(:focus):valid {
+      border-color: $Mercury;
+    }
+
     @include desktop {
       height: 100%;
     }
+  }
+  &__error {
+    border-color: $error-state-color !important;
   }
 
   &__buttons {
