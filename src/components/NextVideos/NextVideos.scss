@@ -32,10 +32,8 @@
     &:hover,
     &:focus {
       text-decoration: none;
-      background-color: $Alabaster;
-      border-radius: 0.25rem;
 
-      //stylistic addition - potential update to start playing video in future (e.g. youtube video thumbnails)
+      //stylistic addition - potential update to start playing video preview in future (e.g. youtube video thumbnails)
       img {
         transform: scale(1.2);
         transition: transform 0.3s ease-in-out;

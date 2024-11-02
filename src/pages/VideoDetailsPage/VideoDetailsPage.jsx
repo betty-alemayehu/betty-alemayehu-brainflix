@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { API_URL, API_KEY } from "../../../utils";
-import NavBar from "../../components/NavBar/NavBar";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import NowPlayingCopy from "../../components/NowPlayingCopy/NowPlayingCopy";
 import CommentForm from "../../components/CommentForm/CommentForm";
@@ -10,46 +9,38 @@ import NextVideos from "../../components/NextVideos/NextVideos";
 import "./VideoDetailsPage.scss";
 export default function VideoDetailsPage({ videos }) {
   //document.title
-  // useEffect(() => {
-  //   if (currentVideo) {
-  //     document.title = `BrainFlix | ${currentVideo.title}`;
-  //   } else {
-  //     document.title = "BrainFlix | Video";
-  //   }
-  // });
-  //        setVideos(videoData.data.filter((video) => video.id !== videoId));
+  useEffect(() => {
+    if (currentVideo) {
+      document.title = `BrainFlix | ${currentVideo.title}`;
+    } else {
+      document.title = "BrainFlix | Video";
+    }
+  });
 
-  // if (!currentVideo) return <p>Loading...</p>;
-
+  //useParams from App.jsx routing /:videoId
   const { videoId } = useParams();
   const id = videoId ?? videos[0].id;
 
   const [currentVideo, setCurrentVideo] = useState(null);
 
-  async function getCurrentVideo() {
-    try {
-      const { data } = await axios.get(
-        `${API_URL}/videos/${id}?api_key=${API_KEY}`
-      );
-      setCurrentVideo(data);
-    } catch (error) {
-      console.error("Error fetching in VideoDetailsPage: ", error);
-    }
-  }
-
   useEffect(() => {
+    async function getCurrentVideo() {
+      try {
+        const { data } = await axios.get(
+          `${API_URL}/videos/${id}?api_key=${API_KEY}`
+        );
+        setCurrentVideo(data);
+      } catch (error) {
+        console.error("Error fetching in VideoDetailsPage: ", error);
+      }
+    }
     getCurrentVideo();
   }, [videoId]);
 
+  //Render Loading... if no current video
   if (!currentVideo) {
     return <p>Loading...</p>;
   }
-
-  // if (videos.length === 0) {
-  //   return <div>loading videos...</div>;
-  // }
-
-  // return <h1>vid deets page!!!!! id: {id}</h1>;
 
   return (
     <div className="video-details-page">

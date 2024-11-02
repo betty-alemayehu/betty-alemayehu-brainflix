@@ -1,6 +1,4 @@
-// pages/VideoUploadPage/VideoUploadPage.jsx
 import { useEffect } from "react";
-import NavBar from "../../components/NavBar/NavBar";
 import VideoUpload from "../../components/VideoUpload/VideoUpload";
 import "./VideoUploadPage.scss";
 

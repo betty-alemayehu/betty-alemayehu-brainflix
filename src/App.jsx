@@ -28,7 +28,7 @@ export default function App() {
   }, []);
 
   if (videos.length === 0) {
-    return <div>loading videos...</div>;
+    return <div>Loading...</div>;
   }
 
   return (
