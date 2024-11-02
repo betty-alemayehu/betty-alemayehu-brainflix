@@ -11,14 +11,20 @@
   margin-bottom: $gutter-mobile;
   @include containerPadding;
   @include tablet {
+    align-items: center;
     margin-bottom: $gutter-tablet-desktop;
   }
 
   &__form {
     display: flex;
     flex-direction: column;
+    @include containerPadding;
+
     @include tablet {
       gap: $gutter-tablet-desktop;
+    }
+    @include desktop {
+      max-width: 80rem;
     }
   }
   &__form-container {
