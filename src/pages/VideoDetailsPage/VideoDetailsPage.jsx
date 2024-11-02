@@ -33,7 +33,7 @@ export default function VideoDetailsPage({ videos }) {
       );
       setCurrentVideo(data);
     } catch (error) {
-      console.log("Error fetching in VideoDetailsPage: ", error);
+      console.error("Error fetching in VideoDetailsPage: ", error);
     }
   }
 

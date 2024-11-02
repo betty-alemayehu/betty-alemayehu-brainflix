@@ -60,14 +60,12 @@
     &:not(:focus):valid {
       border-color: $Mercury;
     }
-
-    &.error {
-      border-color: $error-state-color;
-    }
   }
+
   &__error {
     border-color: $error-state-color !important;
   }
+
   &__search-icon {
     position: absolute;
     left: 0.625rem;

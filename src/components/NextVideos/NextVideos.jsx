@@ -1,10 +1,8 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React from "react";
 import "./NextVideos.scss";
 
 export default function NextVideos({ videos, currentVideo }) {
-  // const { videoId } = useParams();
-
   const filteredVideos = videos.filter((video) => video.id !== currentVideo.id);
 
   return (
@@ -13,26 +11,23 @@ export default function NextVideos({ videos, currentVideo }) {
       <h2 className="label">Next Videos</h2>
       <ul className="next-videos__list">
         {filteredVideos.map((video) => (
-          <li
+          <Link
+            to={`/videos/${video.id}`}
             key={video.id}
             className="next-videos__card"
-            // onClick={() => onSelectVideo(video.id)}
           >
-            <Link
-              to={`/videos/${video.id}`}
-              className="next-videos__link next-videos__thumbnail-wrapper"
-            >
+            <div className="next-videos__link next-videos__thumbnail-wrapper">
               <img
                 src={video.image}
                 alt={video.title}
                 className="next-videos__thumbnail"
               />
-            </Link>
+            </div>
             <div className="next-videos__info">
               <h3 className="next-videos__title">{video.title}</h3>
               <p className="next-videos__channel">{video.channel}</p>
             </div>
-          </li>
+          </Link>
         ))}
       </ul>
     </div>

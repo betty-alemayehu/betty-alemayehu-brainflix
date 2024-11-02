@@ -1,6 +1,7 @@
 @use "../../styles/partials/mixins.scss" as *;
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/global.scss" as *;
+
 .next-videos {
   display: flex;
   flex-direction: column;
@@ -25,6 +26,21 @@
     gap: $gutter-mobile;
     max-height: 4rem;
     min-height: 4rem;
+    text-decoration: none;
+
+    // Remove underline on hover/focus
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background-color: $Alabaster;
+      border-radius: 0.25rem;
+
+      //stylistic addition - potential update to start playing video in future (e.g. youtube video thumbnails)
+      img {
+        transform: scale(1.2);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
   }
 
   &__thumbnail-wrapper {
@@ -49,6 +65,7 @@
   &__channel {
     padding-top: 0;
   }
+
   &__info {
     display: flex;
     flex-direction: column;

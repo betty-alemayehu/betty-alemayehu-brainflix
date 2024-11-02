@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import React from "react";
 import "./NavBar.scss";
@@ -20,7 +20,7 @@ export default function NavBar() {
 
   return (
     <header className="nav-bar">
-      {/* inserting link in place of image */}
+      {/* Home Icon: inserting link in place of image */}
       <div className="nav-bar__container">
         <NavLink to="/" className="nav-bar__logo logo-icon">
           <img src={logo} alt="BrainFlix Logo" />
@@ -52,7 +52,7 @@ export default function NavBar() {
           />
         </div>
 
-        {/* inserting link in place of image */}
+        {/* Search bar: inserting link in place of image */}
         <NavLink to="/upload" className="nav-bar__link">
           <button className="nav-bar__button">
             <img
@@ -63,6 +63,7 @@ export default function NavBar() {
             <h4 className="nav-bar__button-copy">Upload</h4>
           </button>
         </NavLink>
+        {/* User Avatar */}
         <img
           className="nav-bar__user-icon--tablet avatar"
           src={userIcon}
