@@ -21,52 +21,54 @@ export default function NavBar() {
   return (
     <header className="nav-bar">
       {/* inserting link in place of image */}
-      <NavLink to="/" className="nav-bar__logo logo-icon">
-        <img src={logo} alt="BrainFlix Logo" />
-      </NavLink>
-      <div
-        className={`nav-bar__search-container ${
-          isError ? "nav-bar__error" : ""
-        }`}
-      >
+      <div className="nav-bar__container">
+        <NavLink to="/" className="nav-bar__logo logo-icon">
+          <img src={logo} alt="BrainFlix Logo" />
+        </NavLink>
+        <div
+          className={`nav-bar__search-container ${
+            isError ? "nav-bar__error" : ""
+          }`}
+        >
+          <img
+            src={searchIcon}
+            alt="Search Icon"
+            className="nav-bar__search-icon"
+          />
+          <input
+            required
+            value={searchValue}
+            onChange={handleInputChange}
+            className="nav-bar__search"
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Search"
+          />
+          <img
+            className="nav-bar__user-icon avatar"
+            src={userIcon}
+            alt="user icon"
+          />
+        </div>
+
+        {/* inserting link in place of image */}
+        <NavLink to="/upload" className="nav-bar__link">
+          <button className="nav-bar__button">
+            <img
+              src={uploadIcon}
+              alt="Upload Icon"
+              className="nav-bar__button-icon"
+            />
+            <h4 className="nav-bar__button-copy">Upload</h4>
+          </button>
+        </NavLink>
         <img
-          src={searchIcon}
-          alt="Search Icon"
-          className="nav-bar__search-icon"
-        />
-        <input
-          required
-          value={searchValue}
-          onChange={handleInputChange}
-          className="nav-bar__search"
-          type="text"
-          name="search"
-          id="search"
-          placeholder="Search"
-        />
-        <img
-          className="nav-bar__user-icon avatar"
+          className="nav-bar__user-icon--tablet avatar"
           src={userIcon}
           alt="user icon"
         />
       </div>
-
-      {/* inserting link in place of image */}
-      <NavLink to="/upload" className="nav-bar__link">
-        <button className="nav-bar__button">
-          <img
-            src={uploadIcon}
-            alt="Upload Icon"
-            className="nav-bar__button-icon"
-          />
-          <h4 className="nav-bar__button-copy">Upload</h4>
-        </button>
-      </NavLink>
-      <img
-        className="nav-bar__user-icon--tablet avatar"
-        src={userIcon}
-        alt="user icon"
-      />
     </header>
   );
 }
