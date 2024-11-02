@@ -1,4 +1,3 @@
-// components/VideoUpload/VideoUpload.jsx
 import React, { useState } from "react";
 import uploadThumbnail from "../../assets/images/Upload-video-preview.jpg";
 import "./VideoUpload.scss";
@@ -96,7 +95,6 @@ export default function VideoUpload() {
                 name="description"
                 value={description}
                 onChange={handleDescriptionChange}
-                // className="upload-video__textarea"
                 className={`upload-video__textarea ${
                   descriptionError ? "upload-video__error" : ""
                 }`}
@@ -122,7 +120,6 @@ export default function VideoUpload() {
           <Link
             to="/"
             className="upload-video__button upload-video__button--cancel"
-            // onClick={() => navigate("/")}
           >
             Cancel
           </Link>
