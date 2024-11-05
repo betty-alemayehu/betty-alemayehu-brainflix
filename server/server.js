@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import videoRoutes from "./routes/videos.js";
 import path from "path";
+import dotenv from "dotenv";
 
 const app = express();
 app.use(cors());
