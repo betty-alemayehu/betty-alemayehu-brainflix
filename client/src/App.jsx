@@ -15,7 +15,7 @@ export default function App() {
       try {
         const { data } = await axios.get(
           // `${API_URL}/videos/${videoId}?api_key=${API_KEY}`
-          `${process.env.REACT_APP_API_URL}/videos?api_key=${process.env.REACT_APP_API_KEY}`
+          `${process.env.VITE_API_URL}/videos?api_key=${process.env.VITE_API_KEY}`
         );
 
         setVideos(data);
