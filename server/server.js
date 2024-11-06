@@ -16,7 +16,7 @@ app.use("/public", express.static(path.resolve(process.env.PUBLIC_PATH)));
 //video routes
 app.use("/videos", videoRoutes);
 
-const PORT = process.env.PORT || 8080;
+const PORT = import.meta.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server running on port: ${PORT}`);
 });

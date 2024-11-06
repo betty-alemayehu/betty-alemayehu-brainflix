@@ -27,7 +27,9 @@ export default function VideoDetailsPage({ videos }) {
     async function getCurrentVideo() {
       try {
         const { data } = await axios.get(
-          `${process.env.VITE_API_URL}/videos/${id}?api_key=${process.env.VITE_API_KEY}`
+          `${import.meta.env.VITE_API_URL}/videos/${id}?api_key=${
+            import.meta.env.VITE_API_KEY
+          }`
         );
         setCurrentVideo(data);
       } catch (error) {
