@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import uploadThumbnail from "../../assets/images/Upload-video-preview.jpg"; //front-end rendering
+// import uploadThumbnail from "../../assets/images/Upload-video-preview.jpg"; //front-end rendering
 import "./VideoUpload.scss";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import uploadIcon from "../../assets/Images/Icons/upload.svg";
 import axios from "axios";
+
+const URL = import.meta.env.VITE_API_URL;
 
 export default function VideoUpload() {
   const navigate = useNavigate();
@@ -72,7 +74,10 @@ export default function VideoUpload() {
                 Video thumbnail
               </label>
               <div className="upload-video__thumbnail-image">
-                <img src={uploadThumbnail} alt="Video thumbnail placeholder" />
+                <img
+                  src={`${URL}/public/images/sample-thumbnail.jpg`}
+                  alt="Video thumbnail placeholder"
+                />
               </div>
             </div>{" "}
           </div>
