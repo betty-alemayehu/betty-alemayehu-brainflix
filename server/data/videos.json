@@ -324,12 +324,38 @@
     "title": "test3 thumbnail upload",
     "description": "test3 thumbnail upload",
     "channel": "User Channel",
+    "image": "http://localhost:8080/images/sample-thumbnail.jpg",
+    "views": "0",
+    "likes": "0",
+    "duration": "0:00",
+    "video": "http://localhost:8080/images/sample-thumbnail.jpg",
+    "timestamp": 1730864532648,
+    "comments": []
+  },
+  {
+    "id": "6d1ec865-5b24-4f78-a988-caaf8ff4ccea",
+    "title": "test4",
+    "description": "test4",
+    "channel": "User Channel",
+    "image": "http://localhost:8080/images/sample-thumbnail.jpg",
+    "views": "0",
+    "likes": "0",
+    "duration": "0:00",
+    "video": "http://localhost:8080/images/sample-thumbnail.jpg",
+    "timestamp": 1730932665214,
+    "comments": []
+  },
+  {
+    "id": "eeb83ad1-597a-4b59-a3fe-9949b0a380d0",
+    "title": "test5",
+    "description": "test5",
+    "channel": "User Channel",
     "image": "http://localhost:8080/public/sample-thumbnail.jpg",
     "views": "0",
     "likes": "0",
     "duration": "0:00",
     "video": "http://localhost:8080/public/sample-thumbnail.jpg",
-    "timestamp": 1730864532648,
+    "timestamp": 1730933395783,
     "comments": []
   }
 ]

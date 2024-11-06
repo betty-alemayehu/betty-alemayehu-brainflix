@@ -10,22 +10,22 @@ import "./App.scss";
 export default function App() {
   const [videos, setVideos] = useState([]);
 
+  const fetchVideos = async () => {
+    try {
+      const { data } = await axios.get(
+        // `${API_URL}/videos/${videoId}?api_key=${API_KEY}`
+        `${import.meta.env.VITE_API_URL}/videos?api_key=${
+          import.meta.env.VITE_API_KEY
+        }`
+      );
+
+      setVideos(data);
+    } catch (error) {
+      console.error("Error fetching video details:", error);
+    }
+  };
+
   useEffect(() => {
-    const fetchVideos = async () => {
-      try {
-        const { data } = await axios.get(
-          // `${API_URL}/videos/${videoId}?api_key=${API_KEY}`
-          `${import.meta.env.VITE_API_URL}/videos?api_key=${
-            import.meta.env.VITE_API_KEY
-          }`
-        );
-
-        setVideos(data);
-      } catch (error) {
-        console.error("Error fetching video details:", error);
-      }
-    };
-
     fetchVideos();
   }, []);
 
@@ -46,7 +46,10 @@ export default function App() {
             element={<VideoDetailsPage videos={videos} />}
           />
           {/* VideoUploadPage */}
-          <Route path="/upload" element={<VideoUploadPage />} />
+          <Route
+            path="/upload"
+            element={<VideoUploadPage fetchVideos={fetchVideos} />}
+          />
         </Routes>
       </div>
     </BrowserRouter>

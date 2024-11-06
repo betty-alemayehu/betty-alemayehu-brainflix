@@ -8,7 +8,7 @@ import axios from "axios";
 
 const URL = import.meta.env.VITE_API_URL;
 
-export default function VideoUpload() {
+export default function VideoUpload({ fetchVideos }) {
   const navigate = useNavigate();
 
   const [description, setDescription] = useState("");
@@ -37,7 +37,7 @@ export default function VideoUpload() {
         setDescription("");
         setTitleError(false);
         setDescriptionError(false);
-
+        fetchVideos();
         navigate("/");
       } catch (error) {
         console.log("Error uploading video: ", error);

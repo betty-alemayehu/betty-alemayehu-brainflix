@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import VideoUpload from "../../components/VideoUpload/VideoUpload";
 import "./VideoUploadPage.scss";
 
-export default function VideoUploadPage() {
+export default function VideoUploadPage({ fetchVideos }) {
   // const { videoId } = useParams();
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export default function VideoUploadPage() {
   return (
     <div className="video-upload-page">
       <main className="video-upload-page__content">
-        <VideoUpload />
+        <VideoUpload fetchVideos={fetchVideos} />
       </main>
     </div>
   );
