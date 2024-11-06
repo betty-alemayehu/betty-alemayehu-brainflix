@@ -2,9 +2,12 @@ import express from "express";
 import fs from "fs";
 import path from "path";
 import uuidv4 from "uuid";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const router = express.Router();
-const videosFilePath = path.resolve("data/videos.json");
+const videosFilePath = path.resolve(process.env.DATA_FILE_PATH);
 
 const readVideos = () => {
   const data = fs.readFileSync(videosFilePath);
