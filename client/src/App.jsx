@@ -30,7 +30,7 @@ export default function App() {
   }, []);
 
   if (videos.length === 0) {
-    return <div>Loading...</div>;
+    return <div>App.jsx Loading...</div>;
   }
 
   return (

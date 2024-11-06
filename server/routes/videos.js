@@ -14,10 +14,6 @@ const readVideos = () => {
   return JSON.parse(data);
 };
 
-const writeVideos = (videos) => {
-  fs.writeFileSync(videosFilePath, JSON.stringify(videos));
-};
-
 //GET /videos - returning the array of videos
 router.get("/", (req, res) => {
   const videos = readVideos();

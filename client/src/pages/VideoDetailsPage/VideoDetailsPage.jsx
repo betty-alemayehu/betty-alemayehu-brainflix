@@ -41,7 +41,7 @@ export default function VideoDetailsPage({ videos }) {
 
   //Render Loading... if no current video
   if (!currentVideo) {
-    return <p>Loading...</p>;
+    return <p>VidDeets Loading...</p>;
   }
 
   return (
