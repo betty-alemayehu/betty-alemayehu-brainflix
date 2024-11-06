@@ -47,11 +47,11 @@ router.post("/", (req, res) => {
     title: req.body.title,
     description: req.body.description,
     channel: "User Channel", //Hard coded placeholder re assignment instructions
-    image: "https://cataas.com/cat",
+    image: `${process.env.BASE_URL}/public/sample-thumbnail.jpg`,
     views: "0",
     likes: "0",
     duration: "0:00",
-    video: "https://cataas.com/cat",
+    video: `${process.env.BASE_URL}/public/sample-thumbnail.jpg`,
     timestamp: Date.now(),
     comments: [],
   };

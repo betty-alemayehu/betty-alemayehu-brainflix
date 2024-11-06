@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import uploadThumbnail from "../../assets/images/Upload-video-preview.jpg";
+import uploadThumbnail from "../../assets/images/Upload-video-preview.jpg"; //front-end rendering
 import "./VideoUpload.scss";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";

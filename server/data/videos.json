@@ -318,5 +318,18 @@
     "video": "https://cataas.com/cat",
     "timestamp": 1730860833305,
     "comments": []
+  },
+  {
+    "id": "8619f015-4c1c-4cf1-a7aa-313bcad084df",
+    "title": "test3 thumbnail upload",
+    "description": "test3 thumbnail upload",
+    "channel": "User Channel",
+    "image": "http://localhost:8080/public/sample-thumbnail.jpg",
+    "views": "0",
+    "likes": "0",
+    "duration": "0:00",
+    "video": "http://localhost:8080/public/sample-thumbnail.jpg",
+    "timestamp": 1730864532648,
+    "comments": []
   }
 ]
