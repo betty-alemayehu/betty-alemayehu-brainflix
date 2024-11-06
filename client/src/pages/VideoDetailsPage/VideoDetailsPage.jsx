@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { API_URL, API_KEY } from "../../../utils";
+// import { API_URL, API_KEY } from "../../../utils";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import NowPlayingCopy from "../../components/NowPlayingCopy/NowPlayingCopy";
 import CommentForm from "../../components/CommentForm/CommentForm";
@@ -27,7 +27,7 @@ export default function VideoDetailsPage({ videos }) {
     async function getCurrentVideo() {
       try {
         const { data } = await axios.get(
-          `${API_URL}/videos/${id}?api_key=${API_KEY}`
+          `${process.env.REACT_APP_API_URL}/videos/${id}?api_key=${process.env.REACT_APP_API_KEY}`
         );
         setCurrentVideo(data);
       } catch (error) {

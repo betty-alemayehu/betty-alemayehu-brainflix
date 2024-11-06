@@ -3,7 +3,7 @@ import VideoDetailsPage from "./pages/VideoDetailsPage/VideoDetailsPage";
 import VideoUploadPage from "./pages/VideoUploadPage/VideoUploadPage";
 import NavBar from "./components/NavBar/NavBar";
 import { useState, useEffect } from "react";
-import { API_KEY, API_URL } from "../utils";
+// import { API_KEY, API_URL } from "../utils";
 import axios from "axios";
 import "./App.scss";
 
@@ -15,7 +15,7 @@ export default function App() {
       try {
         const { data } = await axios.get(
           // `${API_URL}/videos/${videoId}?api_key=${API_KEY}`
-          `${API_URL}/videos?api_key=${API_KEY}`
+          `${process.env.REACT_APP_API_URL}/videos?api_key=${process.env.REACT_APP_API_KEY}`
         );
 
         setVideos(data);
