@@ -3,6 +3,8 @@ import VideoUpload from "../../components/VideoUpload/VideoUpload";
 import "./VideoUploadPage.scss";
 
 export default function VideoUploadPage() {
+  // const { videoId } = useParams();
+
   useEffect(() => {
     document.title = "BrainFlix | Upload";
   }, []);

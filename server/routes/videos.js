@@ -14,6 +14,10 @@ const readVideos = () => {
   return JSON.parse(data);
 };
 
+const writeVideos = (videos) => {
+  fs.writeFileSync(videosFilePath, JSON.stringify(videos, null, 2));
+};
+
 //GET /videos - returning the array of videos
 router.get("/", (req, res) => {
   const videos = readVideos();
@@ -43,11 +47,11 @@ router.post("/", (req, res) => {
     title: req.body.title,
     description: req.body.description,
     channel: "User Channel", //Hard coded placeholder re assignment instructions
-    image: "/public/images/sample-thumbnail.jpg",
+    image: "https://cataas.com/cat",
     views: "0",
     likes: "0",
     duration: "0:00",
-    video: "/public/images/sample-thumbnail.jpg",
+    video: "https://cataas.com/cat",
     timestamp: Date.now(),
     comments: [],
   };

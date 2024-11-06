@@ -4,6 +4,7 @@ import "./VideoUpload.scss";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import uploadIcon from "../../assets/Images/Icons/upload.svg";
+import axios from "axios";
 
 export default function VideoUpload() {
   const navigate = useNavigate();
@@ -21,12 +22,24 @@ export default function VideoUpload() {
     const isDescriptionValid = description.trim() !== "";
 
     if (isTitleValid && isDescriptionValid) {
-      alert("Video successfully uploaded!");
-      setTitleP("");
-      setDescription("");
-      setTitleError(false);
-      setDescriptionError(false);
-      navigate("/");
+      try {
+        const videoData = {
+          title: titleP,
+          description: description,
+        };
+        axios.post(`${import.meta.env.VITE_API_URL}/videos`, videoData);
+
+        alert("Video successfully uploaded!");
+
+        setTitleP("");
+        setDescription("");
+        setTitleError(false);
+        setDescriptionError(false);
+
+        navigate("/");
+      } catch (error) {
+        console.log("Error uploading video: ", error);
+      }
     } else {
       setTitleError(!isTitleValid);
       setDescriptionError(!isDescriptionValid);
