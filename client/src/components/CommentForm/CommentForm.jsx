@@ -2,8 +2,10 @@ import { useState } from "react";
 import React from "react";
 import "./CommentForm.scss";
 import { formatDistanceToNow } from "date-fns";
-import userIcon from "../../assets/images/Mohan-muruge.jpg";
-import commentIcon from "../../assets/images/Icons/add_comment.svg";
+// import userIcon from "../../assets/images/Mohan-muruge.jpg";
+// import commentIcon from "../../assets/images/Icons/add_comment.svg";
+
+const URL = import.meta.env.VITE_API_URL;
 
 export default function CommentForm({ currentVideo }) {
   const { comments } = currentVideo;
@@ -45,7 +47,7 @@ export default function CommentForm({ currentVideo }) {
 
         <div className="comment-form__form-area">
           <img
-            src={userIcon}
+            src={`${URL}/images/Mohan-muruge.jpg`}
             alt="user icon"
             className="comment-form__user-icon avatar"
           />
@@ -75,7 +77,7 @@ export default function CommentForm({ currentVideo }) {
                 className="comment-form__submit"
               >
                 <img
-                  src={commentIcon}
+                  src={`${URL}/Icons/add_comment.svg`}
                   alt="Add comment icon"
                   className="comment-form__submit-icon"
                 />

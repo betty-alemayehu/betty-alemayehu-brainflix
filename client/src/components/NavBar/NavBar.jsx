@@ -3,9 +3,10 @@ import { useState } from "react";
 import React from "react";
 import "./NavBar.scss";
 // import logo from "../../assets/images/Logo/BrainFlix-logo.svg";
-import searchIcon from "../../assets/images/Icons/search.svg";
-import userIcon from "../../assets/images/Mohan-muruge.jpg";
-import uploadIcon from "../../assets/images/Icons/upload.svg";
+// import searchIcon from "../../assets/images/Icons/search.svg";
+// import userIcon from "../../assets/images/Mohan-muruge.jpg";
+// import uploadIcon from "../../assets/images/Icons/upload.svg";
+
 const URL = import.meta.env.VITE_API_URL;
 
 export default function NavBar() {
@@ -32,7 +33,7 @@ export default function NavBar() {
           }`}
         >
           <img
-            src={searchIcon}
+            src={`${URL}/Icons/search.svg`}
             alt="Search Icon"
             className="nav-bar__search-icon"
           />
@@ -48,7 +49,7 @@ export default function NavBar() {
           />
           <img
             className="nav-bar__user-icon avatar"
-            src={userIcon}
+            src={`${URL}/images/Mohan-muruge.jpg`}
             alt="user icon"
           />
         </div>
@@ -57,7 +58,7 @@ export default function NavBar() {
         <NavLink to="/upload" className="nav-bar__link">
           <button className="nav-bar__button">
             <img
-              src={uploadIcon}
+              src={`${URL}/Icons/upload.svg`}
               alt="Upload Icon"
               className="nav-bar__button-icon"
             />
@@ -67,7 +68,7 @@ export default function NavBar() {
         {/* User Avatar */}
         <img
           className="nav-bar__user-icon--tablet avatar"
-          src={userIcon}
+          src={`${URL}/images/Mohan-muruge.jpg`}
           alt="user icon"
         />
       </div>

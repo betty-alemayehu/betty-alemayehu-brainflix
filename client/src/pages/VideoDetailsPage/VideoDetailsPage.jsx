@@ -23,19 +23,19 @@ export default function VideoDetailsPage({ videos, fetchVideos }) {
 
   const [currentVideo, setCurrentVideo] = useState(null);
 
-  useEffect(() => {
-    async function getCurrentVideo() {
-      try {
-        const { data } = await axios.get(
-          `${import.meta.env.VITE_API_URL}/videos/${id}?api_key=${
-            import.meta.env.VITE_API_KEY
-          }`
-        );
-        setCurrentVideo(data);
-      } catch (error) {
-        console.error("Error fetching in VideoDetailsPage: ", error);
-      }
+  async function getCurrentVideo() {
+    try {
+      const { data } = await axios.get(
+        `${import.meta.env.VITE_API_URL}/videos/${id}?api_key=${
+          import.meta.env.VITE_API_KEY
+        }`
+      );
+      setCurrentVideo(data);
+    } catch (error) {
+      console.error("Error fetching in VideoDetailsPage: ", error);
     }
+  }
+  useEffect(() => {
     getCurrentVideo();
   }, [videoId]);
 
@@ -48,7 +48,7 @@ export default function VideoDetailsPage({ videos, fetchVideos }) {
     <div className="video-details-page">
       <main className="video-details-page__main-content">
         <section className="video-details-page__video-player">
-          <VideoPlayer currentVideo={currentVideo} fetchVideos={fetchVideos} />
+          <VideoPlayer currentVideo={currentVideo} />
         </section>
 
         <div className="video-details-page__layout">

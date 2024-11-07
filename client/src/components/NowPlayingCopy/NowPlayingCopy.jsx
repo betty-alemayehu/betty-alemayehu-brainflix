@@ -1,9 +1,11 @@
 import React from "react";
 import "./NowPlayingCopy.scss";
 import "../../App.jsx";
-import viewsIcon from "../../assets/images/Icons/views.svg";
-import likeIcon from "../../assets/images/Icons/likes.svg";
+// import viewsIcon from "../../assets/images/Icons/views.svg";
+// import likeIcon from "../../assets/images/Icons/likes.svg";
 import { formatDistanceToNow } from "date-fns";
+
+const URL = import.meta.env.VITE_API_URL;
 
 export default function NowPlayingCopy({ currentVideo }) {
   const { title, channel, timestamp, views, likes, description } = currentVideo;
@@ -31,7 +33,7 @@ export default function NowPlayingCopy({ currentVideo }) {
         <div className="now-playing-copy__stats">
           <div className="now-playing-copy__stat">
             <img
-              src={viewsIcon}
+              src={`${URL}/Icons/views.svg`}
               alt="View count"
               className="now-playing-copy__icon"
             />
@@ -41,7 +43,7 @@ export default function NowPlayingCopy({ currentVideo }) {
           </div>
           <div className="now-playing-copy__stat">
             <img
-              src={likeIcon}
+              src={`${URL}/Icons/likes.svg`}
               alt="Likes"
               className="now-playing-copy__icon"
             />

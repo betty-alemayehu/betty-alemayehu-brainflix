@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./VideoUpload.scss";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import uploadIcon from "../../assets/Images/Icons/upload.svg";
+// import uploadIcon from "../../assets/Images/Icons/upload.svg";
 import axios from "axios";
 
 const URL = import.meta.env.VITE_API_URL;
@@ -129,7 +129,7 @@ export default function VideoUpload({ fetchVideos }) {
             className="upload-video__button upload-video__button--publish"
           >
             <img
-              src={uploadIcon}
+              src={`${URL}/Icons/upload.svg`}
               alt="Upload Icon"
               className="upload-video__button-icon"
             />
