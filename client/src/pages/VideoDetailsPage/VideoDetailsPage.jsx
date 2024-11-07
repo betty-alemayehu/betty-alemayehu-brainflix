@@ -7,7 +7,7 @@ import NowPlayingCopy from "../../components/NowPlayingCopy/NowPlayingCopy";
 import CommentForm from "../../components/CommentForm/CommentForm";
 import NextVideos from "../../components/NextVideos/NextVideos";
 import "./VideoDetailsPage.scss";
-export default function VideoDetailsPage({ videos }) {
+export default function VideoDetailsPage({ videos, fetchVideos }) {
   //document.title
   useEffect(() => {
     if (currentVideo) {
@@ -48,7 +48,7 @@ export default function VideoDetailsPage({ videos }) {
     <div className="video-details-page">
       <main className="video-details-page__main-content">
         <section className="video-details-page__video-player">
-          <VideoPlayer currentVideo={currentVideo} />
+          <VideoPlayer currentVideo={currentVideo} fetchVideos={fetchVideos} />
         </section>
 
         <div className="video-details-page__layout">

@@ -39,11 +39,18 @@ export default function App() {
         <NavBar />
         <Routes>
           {/* HomePage */}
-          <Route path="/" element={<VideoDetailsPage videos={videos} />} />
+          <Route
+            path="/"
+            element={
+              <VideoDetailsPage videos={videos} fetchVideos={fetchVideos} />
+            }
+          />
           {/* VideoDetailsPage with dynamic routing */}
           <Route
             path="/videos/:videoId"
-            element={<VideoDetailsPage videos={videos} />}
+            element={
+              <VideoDetailsPage videos={videos} fetchVideos={fetchVideos} />
+            }
           />
           {/* VideoUploadPage */}
           <Route

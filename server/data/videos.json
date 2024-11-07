@@ -294,68 +294,16 @@
     ]
   },
   {
-    "id": "cd29d6ce-57ea-412a-a493-b11533eb31d4",
-    "title": "Postman Test1 Video Title",
-    "description": "Using http://localhost:8080/videos to push this description for the new video",
-    "channel": "User Channel",
-    "image": "https://static.vecteezy.com/system/resources/thumbnails/050/615/626/large/a-white-cat-wearing-sunglasses-laying-in-a-hammock-video.jpg",
-    "views": "0",
-    "likes": "0",
-    "duration": "0:00",
-    "video": "https://static.vecteezy.com/system/resources/previews/050/615/626/mp4/a-white-cat-wearing-sunglasses-laying-in-a-hammock-video.mp4",
-    "timestamp": 1730857301172,
-    "comments": []
-  },
-  {
-    "id": "83d8c050-17ff-49d0-a419-f89f02a256c3",
-    "title": "Test2 via upload form",
-    "description": "Test2 via upload form with description",
-    "channel": "User Channel",
-    "image": "https://cataas.com/cat",
-    "views": "0",
-    "likes": "0",
-    "duration": "0:00",
-    "video": "https://cataas.com/cat",
-    "timestamp": 1730860833305,
-    "comments": []
-  },
-  {
-    "id": "8619f015-4c1c-4cf1-a7aa-313bcad084df",
-    "title": "test3 thumbnail upload",
-    "description": "test3 thumbnail upload",
+    "id": "2941b760-8eae-43a2-a165-22ae6db5a071",
+    "title": "Test1",
+    "description": "Test1",
     "channel": "User Channel",
     "image": "http://localhost:8080/images/sample-thumbnail.jpg",
     "views": "0",
     "likes": "0",
     "duration": "0:00",
     "video": "http://localhost:8080/images/sample-thumbnail.jpg",
-    "timestamp": 1730864532648,
-    "comments": []
-  },
-  {
-    "id": "6d1ec865-5b24-4f78-a988-caaf8ff4ccea",
-    "title": "test4",
-    "description": "test4",
-    "channel": "User Channel",
-    "image": "http://localhost:8080/images/sample-thumbnail.jpg",
-    "views": "0",
-    "likes": "0",
-    "duration": "0:00",
-    "video": "http://localhost:8080/images/sample-thumbnail.jpg",
-    "timestamp": 1730932665214,
-    "comments": []
-  },
-  {
-    "id": "eeb83ad1-597a-4b59-a3fe-9949b0a380d0",
-    "title": "test5",
-    "description": "test5",
-    "channel": "User Channel",
-    "image": "http://localhost:8080/public/sample-thumbnail.jpg",
-    "views": "0",
-    "likes": "0",
-    "duration": "0:00",
-    "video": "http://localhost:8080/public/sample-thumbnail.jpg",
-    "timestamp": 1730933395783,
+    "timestamp": 1730941518901,
     "comments": []
   }
 ]

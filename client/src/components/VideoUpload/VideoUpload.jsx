@@ -75,7 +75,7 @@ export default function VideoUpload({ fetchVideos }) {
               </label>
               <div className="upload-video__thumbnail-image">
                 <img
-                  src={`${URL}/public/images/sample-thumbnail.jpg`}
+                  src={`${URL}/images/sample-thumbnail.jpg`}
                   alt="Video thumbnail placeholder"
                 />
               </div>

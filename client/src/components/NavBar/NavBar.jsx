@@ -2,10 +2,11 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import React from "react";
 import "./NavBar.scss";
-import logo from "../../assets/images/Logo/BrainFlix-logo.svg";
+// import logo from "../../assets/images/Logo/BrainFlix-logo.svg";
 import searchIcon from "../../assets/images/Icons/search.svg";
 import userIcon from "../../assets/images/Mohan-muruge.jpg";
 import uploadIcon from "../../assets/images/Icons/upload.svg";
+const URL = import.meta.env.VITE_API_URL;
 
 export default function NavBar() {
   const [searchValue, setSearchValue] = useState("");
@@ -23,7 +24,7 @@ export default function NavBar() {
       {/* Home Icon: inserting link in place of image */}
       <div className="nav-bar__container">
         <NavLink to="/" className="nav-bar__logo logo-icon">
-          <img src={logo} alt="BrainFlix Logo" />
+          <img src={`${URL}/Logo/Brainflix-logo.svg`} alt="BrainFlix Logo" />
         </NavLink>
         <div
           className={`nav-bar__search-container ${
