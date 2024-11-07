@@ -7,7 +7,7 @@ import NowPlayingCopy from "../../components/NowPlayingCopy/NowPlayingCopy";
 import CommentForm from "../../components/CommentForm/CommentForm";
 import NextVideos from "../../components/NextVideos/NextVideos";
 import "./VideoDetailsPage.scss";
-export default function VideoDetailsPage({ videos, fetchVideos }) {
+export default function VideoDetailsPage({ videos }) {
   //document.title
   useEffect(() => {
     if (currentVideo) {

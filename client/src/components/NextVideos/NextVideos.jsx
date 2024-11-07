@@ -4,7 +4,6 @@ import "./NextVideos.scss";
 
 export default function NextVideos({ videos, currentVideo }) {
   const filteredVideos = videos.filter((video) => video.id !== currentVideo.id);
-
   return (
     <div className="next-videos">
       {/* Next Videos Section */}
