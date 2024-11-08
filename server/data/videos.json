@@ -294,16 +294,16 @@
     ]
   },
   {
-    "id": "3105e90c-93d9-42d7-9eb8-fc506eba24f6",
+    "id": "18fe6f2e-e657-4521-ad8a-ec6ef4c350b2",
     "title": "Test1",
-    "description": "Testing Upload",
+    "description": "Testing video upload page and thumbnail",
     "channel": "User Channel",
     "image": "http://localhost:8080/images/sample-thumbnail.jpg",
     "views": "0",
     "likes": "0",
     "duration": "0:00",
-    "video": "http://localhost:8080/images/sample-thumbnail.jpg",
-    "timestamp": 1731045106479,
+    "video": "http://localhost:8080/videos/BrainStation_Sample_Video.mp4",
+    "timestamp": 1731101029310,
     "comments": []
   }
 ]

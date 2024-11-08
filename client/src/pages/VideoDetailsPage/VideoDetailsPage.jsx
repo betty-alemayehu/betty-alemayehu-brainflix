@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 // import { API_URL, API_KEY } from "../../../utils";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
-import NowPlayingCopy from "../../components/NowPlayingCopy/NowPlayingCopy";
+import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import CommentForm from "../../components/CommentForm/CommentForm";
 import NextVideos from "../../components/NextVideos/NextVideos";
 import "./VideoDetailsPage.scss";
@@ -55,7 +55,7 @@ export default function VideoDetailsPage({ videos }) {
         <div className="video-details-page__layout">
           <div className="video-details-page__video-copy">
             <section className="video-details-page__now-playing">
-              <NowPlayingCopy currentVideo={currentVideo} />
+              <VideoInfo currentVideo={currentVideo} />
             </section>
 
             <section className="video-details-page__comments">

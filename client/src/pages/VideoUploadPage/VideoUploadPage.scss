@@ -1,0 +1,164 @@
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+
+.upload-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 0.0625rem solid $Mercury;
+  margin-bottom: $gutter-mobile;
+  @include containerPadding;
+  @include tablet {
+    align-items: center;
+    margin-bottom: $gutter-tablet-desktop;
+  }
+  @include desktop {
+    align-items: center;
+    margin-bottom: $gutter-tablet-desktop;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      gap: $gutter-tablet-desktop;
+    }
+    @include desktop {
+      max-width: 70rem;
+    }
+  }
+  &__form-container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: column;
+      border-top: 0.0625rem solid $Mercury;
+      border-bottom: 0.0625rem solid $Mercury;
+      padding-bottom: $gutter-tablet-desktop;
+    }
+    @include desktop {
+      flex-direction: row;
+      gap: $gutter-tablet-desktop;
+    }
+  }
+
+  &__thumbnail {
+    width: 100%;
+    height: 100%;
+    @include tablet {
+      width: 50%;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      max-height: fit-content;
+      object-fit: cover;
+      border-radius: 0.25rem;
+      flex-grow: 1;
+      display: flex;
+    }
+  }
+
+  &__fields {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__field {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    &--title {
+      flex-shrink: 0;
+      flex-grow: 0;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: $padding-spacing-base-unit;
+    border: 0.0625rem solid $Mercury;
+    border-radius: 0.25rem;
+    background-color: $Alabaster;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: $BrainFlix-Blue;
+    }
+  }
+
+  &__textarea {
+    resize: none;
+    border: 0.0625rem solid $Mercury;
+
+    transition: border-color 0.5s;
+
+    &:focus {
+      border: 0.125rem solid $BrainFlix-Blue;
+    }
+
+    &:not(:focus):valid {
+      border-color: $Mercury;
+    }
+
+    @include desktop {
+      height: 100%;
+    }
+  }
+  &__error {
+    border-color: $error-state-color !important;
+  }
+
+  &__buttons {
+    @include tablet {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+  }
+  &__button--cancel {
+    color: $BrainFlix-Blue;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+    font-weight: $font-weight-bold;
+    padding: 0.625rem; /* Making space for the icon on the left */
+    height: 2.5rem;
+
+    @include tablet {
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      max-width: 9.375rem;
+      width: 9.375rem;
+
+      max-width: 9.375rem;
+      padding: 0 2rem;
+    }
+  }
+  &__button--publish {
+    position: relative;
+  }
+
+  &__button-icon {
+    position: absolute;
+    left: 0.625rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}

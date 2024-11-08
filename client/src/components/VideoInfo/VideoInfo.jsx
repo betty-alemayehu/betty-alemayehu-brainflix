@@ -1,5 +1,5 @@
 import React from "react";
-import "./NowPlayingCopy.scss";
+import "./VideoInfo.scss";
 import "../../App.jsx";
 // import viewsIcon from "../../assets/images/Icons/views.svg";
 // import likeIcon from "../../assets/images/Icons/likes.svg";
@@ -7,7 +7,7 @@ import { formatDistanceToNow } from "date-fns";
 
 const URL = import.meta.env.VITE_API_URL;
 
-export default function NowPlayingCopy({ currentVideo }) {
+export default function VideoInfo({ currentVideo }) {
   const { title, channel, timestamp, views, likes, description } = currentVideo;
 
   return (
