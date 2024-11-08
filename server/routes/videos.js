@@ -51,7 +51,7 @@ router.post("/", (req, res) => {
     views: "0",
     likes: "0",
     duration: "0:00",
-    video: `${process.env.BASE_URL}/images/sample-thumbnail.jpg`,
+    video: `${process.env.BASE_URL}/videos/BrainStation_Sample_Video.mp4`,
     timestamp: Date.now(),
     comments: [],
   };
