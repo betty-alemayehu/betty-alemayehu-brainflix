@@ -117,10 +117,18 @@ export default function NavBar() {
     }
   };
 
-  // Handle clicking a search result
+  // Handle clearing search on clicking a search result
   const handleResultClick = () => {
     setSearchValue(""); // Reset search input
     setSearchResults([]); // Clear search results
+  };
+
+  // Handle clearing search on blur
+  const handleBlur = () => {
+    setTimeout(() => {
+      setSearchValue("");
+      setSearchResults([]);
+    }, 200); // Delay to allow click event on links
   };
 
   return (
@@ -139,18 +147,13 @@ export default function NavBar() {
           <input
             value={searchValue}
             onChange={handleInputChange}
+            onBlur={handleBlur} // Clear on blur
             className="nav-bar__search"
             type="text"
             name="search"
             id="search"
             placeholder="Search"
           />
-          <img
-            className="nav-bar__user-icon avatar"
-            src={`${URL}/images/Mohan-muruge.jpg`}
-            alt="user icon"
-          />
-
           {/* Search Results Dropdown */}
           {searchResults.length > 0 && (
             <div className="nav-bar__search-results">
@@ -166,6 +169,11 @@ export default function NavBar() {
               ))}
             </div>
           )}
+          <img
+            className="nav-bar__user-icon avatar"
+            src={`${URL}/images/Mohan-muruge.jpg`}
+            alt="user icon"
+          />
         </div>
 
         <NavLink to="/upload" className="nav-bar__link">
