@@ -7,16 +7,8 @@ import NowPlayingCopy from "../../components/NowPlayingCopy/NowPlayingCopy";
 import CommentForm from "../../components/CommentForm/CommentForm";
 import NextVideos from "../../components/NextVideos/NextVideos";
 import "./VideoDetailsPage.scss";
-export default function VideoDetailsPage({ videos }) {
-  //document.title
-  useEffect(() => {
-    if (currentVideo) {
-      document.title = `BrainFlix | ${currentVideo.title}`;
-    } else {
-      document.title = "BrainFlix | Video";
-    }
-  });
 
+export default function VideoDetailsPage({ videos }) {
   //useParams from App.jsx routing /:videoId
   const { videoId } = useParams();
   const id = videoId ?? videos[0].id;
@@ -38,6 +30,15 @@ export default function VideoDetailsPage({ videos }) {
   useEffect(() => {
     getCurrentVideo();
   }, [videoId]);
+
+  //document.title
+  useEffect(() => {
+    if (currentVideo) {
+      document.title = `BrainFlix | ${currentVideo.title}`;
+    } else {
+      document.title = "BrainFlix | Video";
+    }
+  }, [currentVideo]); // Update document title when currentVideo changes
 
   //Render Loading... if no current video
   if (!currentVideo) {
