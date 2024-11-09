@@ -1,13 +1,25 @@
 import express from "express";
 import fs from "fs";
-import path from "path";
 import { v4 as uuidv4 } from "uuid";
 import dotenv from "dotenv";
+import multer from "multer";
 
 dotenv.config();
 
 const router = express.Router();
-const videosFilePath = path.resolve(process.env.DATA_FILE_PATH);
+const videosFilePath = process.env.DATA_FILE_PATH;
+const imagesFolderPath = "public/images";
+
+//multer setup for image uploads
+const storage = multer.diskStorage({
+  destination: imagesFolderPath,
+  filename: (req, file, cb) => {
+    const fileName = `${uuidv4()}${path.extname(file.originalname)}`;
+    cb(null, fileName);
+  },
+});
+
+const upload = multer({ storage });
 
 const readVideos = () => {
   const data = fs.readFileSync(videosFilePath);
