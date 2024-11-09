@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import { API_URL, API_KEY } from "../../../utils";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import CommentForm from "../../components/CommentForm/CommentForm";
@@ -18,8 +17,7 @@ export default function VideoDetailsPage({ videos }) {
   const getCurrentVideo = async () => {
     try {
       const { data } = await axios.get(
-        `${import.meta.env.VITE_API_URL}/videos/${id}
-        }`
+        `${import.meta.env.VITE_API_URL}/videos/${id}`
       );
       setCurrentVideo(data);
     } catch (error) {

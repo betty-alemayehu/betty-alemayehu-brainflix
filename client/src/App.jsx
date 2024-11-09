@@ -3,7 +3,6 @@ import VideoDetailsPage from "./pages/VideoDetailsPage/VideoDetailsPage";
 import VideoUploadPage from "./pages/VideoUploadPage/VideoUploadPage";
 import NavBar from "./components/NavBar/NavBar";
 import { useState, useEffect } from "react";
-// import { API_KEY, API_URL } from "../utils";
 import axios from "axios";
 import "./App.scss";
 
@@ -13,11 +12,8 @@ export default function App() {
   const fetchVideos = async () => {
     try {
       const { data } = await axios.get(
-        // `${API_URL}/videos/${videoId}?api_key=${API_KEY}`
-        `${import.meta.env.VITE_API_URL}/videos
-        }`
+        `${import.meta.env.VITE_API_URL}/videos`
       );
-
       setVideos(data);
     } catch (error) {
       console.error("Error fetching video details:", error);

@@ -4,13 +4,14 @@ import React from "react";
 import "./CommentForm.scss";
 import { formatDistanceToNow } from "date-fns";
 
-const URL = import.meta.env.VITE_API_URL;
+//const URL = import.meta.env.VITE_API_URL;
+const URL = "http://localhost:8080";
 
 export default function CommentForm({ currentVideo, refreshVideoData }) {
   const { comments } = currentVideo;
-  if (!currentVideo) {
-    return <p>Loading comments...</p>;
-  }
+  // if (!currentVideo) {
+  //   return <p>Loading comments...</p>;
+  // }
   //Error state for submissions - copied from Nav Bar
   const [commentValue, setCommentValue] = useState("");
   const [isError, setIsError] = useState(false);
@@ -39,7 +40,7 @@ export default function CommentForm({ currentVideo, refreshVideoData }) {
   return (
     <div className="comment-form">
       {/* Comments Section */}
-      <div className="comment-form__">
+      <div className="comment-form__container">
         <h3 className="comment-form__count">{comments.length} Comments</h3>
 
         <div className="comment-form__form-area">

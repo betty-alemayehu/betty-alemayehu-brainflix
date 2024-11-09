@@ -64,7 +64,7 @@ router.post("/", (req, res) => {
 //COMMENTS
 
 //POST /videos/:id/comments - adding new comment to specific video in json
-router.post("/", (req, res) => {
+router.post("/:id/comments", (req, res) => {
   const videos = readVideos();
   const video = videos.find((v) => v.id === req.params.id);
 
@@ -77,7 +77,7 @@ router.post("/", (req, res) => {
   const newComment = {
     id: uuidv4(),
     name: "Mohan Muruge",
-    comment: req.body.name,
+    comment: req.body.comment,
     channel: "User Channel", //Hard coded placeholder re assignment instructions
     timestamp: Date.now(),
   };

@@ -8,9 +8,6 @@ export default function VideoPlayer({ currentVideo }) {
 
   const { image, video, id } = currentVideo;
 
-  // Dynamically append the api_key from the environment variable to allow for video playing
-  // const videoUrlWithKey = `${video}?api_key=${import.meta.env.VITE_API_KEY}`;
-
   return (
     <div className="video-player">
       {/* Video Section */}
