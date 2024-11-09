@@ -113,13 +113,10 @@
   }
 
   &__text-icon {
-    position: relative;
-  }
-
-  &__delete {
-    position: absolute;
-    top: 55%;
-    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
   }
 
   &__user-icon-wrapper {

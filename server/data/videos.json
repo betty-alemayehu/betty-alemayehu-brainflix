@@ -292,5 +292,18 @@
         "timestamp": 1701584262000
       }
     ]
+  },
+  {
+    "id": "c8143f71-f668-47cf-a0e7-b31f93325e56",
+    "title": "Test for comment deletions",
+    "description": "Test for comment deletions",
+    "channel": "User Channel",
+    "image": "http://localhost:8080/images/sample-thumbnail.jpg",
+    "views": "0",
+    "likes": "0",
+    "duration": "0:00",
+    "video": "http://localhost:8080/videos/BrainStation_Sample_Video.mp4",
+    "timestamp": 1731121506005,
+    "comments": []
   }
 ]
