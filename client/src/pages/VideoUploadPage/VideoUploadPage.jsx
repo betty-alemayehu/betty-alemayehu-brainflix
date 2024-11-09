@@ -12,42 +12,64 @@ export default function VideoUploadPage({ fetchVideos }) {
   useEffect(() => {
     document.title = "BrainFlix | Upload";
   }, []);
+
   const navigate = useNavigate();
 
-  const [description, setDescription] = useState("");
   const [titleP, setTitleP] = useState("");
   const [titleError, setTitleError] = useState(false);
+  const [description, setDescription] = useState("");
   const [descriptionError, setDescriptionError] = useState(false);
 
-  const handleFormSubmit = (event) => {
+  const [thumbnail, setThumbnail] = useState(null);
+
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     // Check for missing inputs and set error states accordingly
-    const isTitleValid = titleP.trim() !== "";
-    const isDescriptionValid = description.trim() !== "";
+    // const isTitleValid = titleP.trim() !== "";
+    // const isDescriptionValid = description.trim() !== "";
 
-    if (isTitleValid && isDescriptionValid) {
-      try {
-        const videoData = {
-          title: titleP,
-          description: description,
-        };
-        axios.post(`${URL}/videos`, videoData);
+    if (!titleP.trim() || !description.trim()) {
+      setTitleError(!titleP.trim());
+      setDescriptionError(!description.trim());
+      return;
+    }
 
-        alert("Video successfully uploaded!");
+    const formData = newFormData();
+    formData.append("title", titleP);
+    formData.append("description", description);
+    if (thumbnail) formData.append("thumbnail", thumbnail);
 
-        setTitleP("");
-        setDescription("");
-        setTitleError(false);
-        setDescriptionError(false);
-        fetchVideos();
-        navigate("/");
-      } catch (error) {
-        console.log("Error uploading video: ", error);
-      }
-    } else {
-      setTitleError(!isTitleValid);
-      setDescriptionError(!isDescriptionValid);
+    // if (isTitleValid && isDescriptionValid) {
+    try {
+      // const videoData = {
+      //   title: titleP,
+      //   description: description,
+      // };
+      await axios.post(`${URL}/videos`, formData);
+
+      alert("Video successfully uploaded!");
+
+      setTitleP("");
+      setDescription("");
+      // setTitleError(false);
+      // setDescriptionError(false);
+      setThumbnail(null);
+      fetchVideos();
+      navigate("/");
+    } catch (error) {
+      console.log("Error uploading video: ", error);
+    }
+  };
+  // else {
+  //   setTitleError(!isTitleValid);
+  //   setDescriptionError(!isDescriptionValid);
+  // }
+
+  const handleThumbnailChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setThumbnail(file);
     }
   };
 
@@ -85,7 +107,12 @@ export default function VideoUploadPage({ fetchVideos }) {
                       src={`${URL}/images/sample-thumbnail.jpg`}
                       alt="Video thumbnail placeholder"
                     />
-                    <p>image upload option here</p>
+                    <input
+                      type="file"
+                      id="thumbnail"
+                      accept="image/*"
+                      onChange={handleThumbnailChange}
+                    />
                   </div>
                 </div>{" "}
               </div>
@@ -116,11 +143,9 @@ export default function VideoUploadPage({ fetchVideos }) {
                     Add a video description
                   </label>
                   <textarea
-                    required
                     id="description"
-                    name="description"
                     value={description}
-                    onChange={handleDescriptionChange}
+                    onChange={(e) => setDescription(e.target.value)}
                     className={`upload-video__textarea ${
                       descriptionError ? "upload-video__error" : ""
                     }`}
