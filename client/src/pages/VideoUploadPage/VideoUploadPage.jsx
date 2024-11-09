@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const URL = import.meta.env.VITE_API_URL;
+
 export default function VideoUploadPage({ fetchVideos }) {
   // const { videoId } = useParams();
 
@@ -31,7 +32,7 @@ export default function VideoUploadPage({ fetchVideos }) {
           title: titleP,
           description: description,
         };
-        axios.post(`${import.meta.env.VITE_API_URL}/videos`, videoData);
+        axios.post(`${URL}/videos`, videoData);
 
         alert("Video successfully uploaded!");
 
@@ -84,6 +85,7 @@ export default function VideoUploadPage({ fetchVideos }) {
                       src={`${URL}/images/sample-thumbnail.jpg`}
                       alt="Video thumbnail placeholder"
                     />
+                    <p>image upload option here</p>
                   </div>
                 </div>{" "}
               </div>

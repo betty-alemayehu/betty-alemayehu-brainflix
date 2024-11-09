@@ -341,5 +341,18 @@
         "timestamp": 1678160000000
       }
     ]
+  },
+  {
+    "id": "b80c8a05-5fb5-4362-ac21-2cfd2962ca61",
+    "title": "Betty",
+    "description": "Image Upload Test with Betty",
+    "channel": "User Channel",
+    "image": "http://localhost:8080/images/a231d71c-ccc2-4d5f-aab5-d5e658741291.jpg",
+    "views": "0",
+    "likes": "0",
+    "duration": "0:00",
+    "video": "http://localhost:8080/videos/BrainStation_Sample_Video.mp4",
+    "timestamp": 1731124224206,
+    "comments": []
   }
 ]
