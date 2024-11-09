@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+eslint.config.js
+vite.config.js
+.gitattributes

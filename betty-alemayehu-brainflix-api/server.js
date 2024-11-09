@@ -3,8 +3,10 @@ import cors from "cors";
 import videoRoutes from "./routes/videos.js";
 import dotenv from "dotenv";
 
-dotenv.config(); //load environment variables
+//load environment variables
+dotenv.config();
 
+//middleware
 const app = express();
 app.use(cors());
 app.use(express.json());

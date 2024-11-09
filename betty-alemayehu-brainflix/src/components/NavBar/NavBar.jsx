@@ -2,10 +2,6 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import React from "react";
 import "./NavBar.scss";
-// import logo from "../../assets/images/Logo/BrainFlix-logo.svg";
-// import searchIcon from "../../assets/images/Icons/search.svg";
-// import userIcon from "../../assets/images/Mohan-muruge.jpg";
-// import uploadIcon from "../../assets/images/Icons/upload.svg";
 
 const URL = import.meta.env.VITE_API_URL;
 

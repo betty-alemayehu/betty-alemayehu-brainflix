@@ -18,7 +18,6 @@
     //switch to row for tablet/desktop
     @include tablet {
       flex-direction: row;
-      // justify-content: flex-end;
       gap: $gutter-tablet-desktop;
       margin: $padding-spacing-base-unit 0;
       max-width: 80rem;

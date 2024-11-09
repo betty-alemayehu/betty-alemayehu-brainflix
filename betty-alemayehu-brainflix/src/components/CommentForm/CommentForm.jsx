@@ -5,14 +5,11 @@ import "./CommentForm.scss";
 import { formatDistanceToNow } from "date-fns";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
-//const URL = import.meta.env.VITE_API_URL;
-const URL = "http://localhost:8080";
+const URL = import.meta.env.VITE_API_URL;
 
 export default function CommentForm({ currentVideo, refreshVideoData }) {
   const { comments } = currentVideo;
-  // if (!currentVideo) {
-  //   return <p>Loading comments...</p>;
-  // }
+
   //Error state for submissions - copied from Nav Bar
   const [commentValue, setCommentValue] = useState("");
   const [isError, setIsError] = useState(false);

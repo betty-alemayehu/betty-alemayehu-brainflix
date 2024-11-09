@@ -28,7 +28,7 @@ export default function VideoDetailsPage({ videos }) {
     getCurrentVideo();
   }, [videoId]);
 
-  //document.title
+  //document.title - do not move up, current Video cannot be called before being defined/declared
   useEffect(() => {
     if (currentVideo) {
       document.title = `BrainFlix | ${currentVideo.title}`;
