@@ -15,18 +15,17 @@ export default function VideoDetailsPage({ videos }) {
 
   const [currentVideo, setCurrentVideo] = useState(null);
 
-  async function getCurrentVideo() {
+  const getCurrentVideo = async () => {
     try {
       const { data } = await axios.get(
-        `${import.meta.env.VITE_API_URL}/videos/${id}?api_key=${
-          import.meta.env.VITE_API_KEY
+        `${import.meta.env.VITE_API_URL}/videos/${id}
         }`
       );
       setCurrentVideo(data);
     } catch (error) {
-      console.error("Error fetching in VideoDetailsPage: ", error);
+      console.error("Error fetching video in VideoDetailsPage: ", error);
     }
-  }
+  };
   useEffect(() => {
     getCurrentVideo();
   }, [videoId]);
@@ -59,7 +58,10 @@ export default function VideoDetailsPage({ videos }) {
             </section>
 
             <section className="video-details-page__comments">
-              <CommentForm currentVideo={currentVideo} />
+              <CommentForm
+                currentVideo={currentVideo}
+                refreshVideoData={getCurrentVideo}
+              />
             </section>
           </div>
           <aside className="video-details-page__next-videos">

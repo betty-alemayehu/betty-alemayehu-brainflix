@@ -61,4 +61,31 @@ router.post("/", (req, res) => {
   res.status(201).json(newVideo);
 });
 
+//COMMENTS
+
+//POST /videos/:id/comments - adding new comment to specific video in json
+router.post("/", (req, res) => {
+  const videos = readVideos();
+  const video = videos.find((v) => v.id === req.params.id);
+
+  if (!video) {
+    return res
+      .status(404)
+      .json({ message: "Cannot upload comment - associated video not found." });
+  }
+
+  const newComment = {
+    id: uuidv4(),
+    name: "Mohan Muruge",
+    comment: req.body.name,
+    channel: "User Channel", //Hard coded placeholder re assignment instructions
+    timestamp: Date.now(),
+  };
+
+  video.comments.unshift(newComment); //replaced push with unshift so new comment gets added to top
+  writeVideos(videos);
+  //set to 201 re status code note
+  res.status(201).json(newComment);
+});
+
 export default router;

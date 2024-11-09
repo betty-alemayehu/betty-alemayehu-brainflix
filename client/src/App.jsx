@@ -14,8 +14,7 @@ export default function App() {
     try {
       const { data } = await axios.get(
         // `${API_URL}/videos/${videoId}?api_key=${API_KEY}`
-        `${import.meta.env.VITE_API_URL}/videos?api_key=${
-          import.meta.env.VITE_API_KEY
+        `${import.meta.env.VITE_API_URL}/videos
         }`
       );
 

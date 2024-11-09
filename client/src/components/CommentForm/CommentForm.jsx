@@ -1,13 +1,12 @@
 import { useState } from "react";
+import axios from "axios";
 import React from "react";
 import "./CommentForm.scss";
 import { formatDistanceToNow } from "date-fns";
-// import userIcon from "../../assets/images/Mohan-muruge.jpg";
-// import commentIcon from "../../assets/images/Icons/add_comment.svg";
 
 const URL = import.meta.env.VITE_API_URL;
 
-export default function CommentForm({ currentVideo }) {
+export default function CommentForm({ currentVideo, refreshVideoData }) {
   const { comments } = currentVideo;
   if (!currentVideo) {
     return <p>Loading comments...</p>;
@@ -17,28 +16,26 @@ export default function CommentForm({ currentVideo }) {
   const [isError, setIsError] = useState(false);
 
   // Function for form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent page refresh
 
-    const newComment = event.target.elements["new-comment"].value.trim(); // Get value directly from the form
+    if (!commentValue.trim()) {
+      setIsError(true);
+      return;
+    }
 
-    if (newComment) {
-      //Error state for submissions
+    try {
+      await axios.post(`${URL}/videos/${currentVideo.id}/comments`, {
+        name: "Mohan Muruge",
+        comment: commentValue,
+      });
       setCommentValue("");
       setIsError(false);
-      event.target.reset(); // Clear the textarea after submitting
-    } else {
-      setIsError(true);
+      refreshVideoData();
+    } catch (error) {
+      console.log("Failed to add comment: ", error);
     }
   };
-
-  const handleInputChange = (error) => {
-    const value = error.target.value;
-    setCommentValue(value);
-
-    setIsError(value.trim() === "");
-  };
-
   return (
     <div className="comment-form">
       {/* Comments Section */}
@@ -65,7 +62,10 @@ export default function CommentForm({ currentVideo }) {
                 id="new-comment"
                 name="new-comment" // Using name to access the value via event.target.elements
                 value={commentValue}
-                onChange={handleInputChange}
+                onChange={(e) => {
+                  setCommentValue(e.target.value);
+                  setIsError(!e.target.value.trim());
+                }}
                 className={`comment-form__textarea ${
                   isError ? "comment-form__error" : ""
                 }`}
