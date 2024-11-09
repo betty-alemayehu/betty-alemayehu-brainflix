@@ -3,6 +3,7 @@ import axios from "axios";
 import React from "react";
 import "./CommentForm.scss";
 import { formatDistanceToNow } from "date-fns";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 //const URL = import.meta.env.VITE_API_URL;
 const URL = "http://localhost:8080";
@@ -37,6 +38,22 @@ export default function CommentForm({ currentVideo, refreshVideoData }) {
       console.log("Failed to add comment: ", error);
     }
   };
+
+  //delete comment function
+
+  const handleDelete = async (commentId) => {
+    if (window.confirm("Are you sure you want to delete this comment?")) {
+      try {
+        await axios.delete(
+          `${URL}/videos/${currentVideo.id}/comments/${commentId}`
+        );
+        refreshVideoData(); //not the whole page, just this section
+      } catch (error) {
+        console.log("Failed to delete comment: ", error);
+      }
+    }
+  };
+
   return (
     <div className="comment-form">
       {/* Comments Section */}
@@ -102,13 +119,20 @@ export default function CommentForm({ currentVideo, refreshVideoData }) {
                 <div className="comment-form__name-date">
                   <h3 className="comment-form__name">{comment.name}</h3>
                   {/* Sprint 1 Diving deeper: imported date formatter (formatDistanceToNow), converting the previous toLocaleDateString to a more refined approach */}
-                  <p className="comment-form__date text-secondary">
+                  <p className="text-secondary">
                     {formatDistanceToNow(new Date(comment.timestamp), {
                       addSuffix: true,
                     })}
                   </p>
                 </div>
-                <p className="comment-form__text">{comment.comment}</p>
+                <div className="comment-form__text-icon">
+                  <p className="comment-form__text">{comment.comment}</p>
+                  <DeleteForeverIcon
+                    aria-label="see more icon"
+                    className="comment-form__delete"
+                    onClick={() => handleDelete(comment.id)}
+                  />
+                </div>
               </div>
             </li>
           ))}

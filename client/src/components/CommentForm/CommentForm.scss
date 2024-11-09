@@ -112,6 +112,16 @@
     justify-content: space-between;
   }
 
+  &__text-icon {
+    position: relative;
+  }
+
+  &__delete {
+    position: absolute;
+    top: 55%;
+    right: 0;
+  }
+
   &__user-icon-wrapper {
     margin-top: $gutter-mobile;
     position: relative;
