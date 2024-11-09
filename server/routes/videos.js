@@ -88,4 +88,31 @@ router.post("/:id/comments", (req, res) => {
   res.status(201).json(newComment);
 });
 
+//DELETE COMMENTS - /videos/:videoId/comments/:commentId *note ":/commentId" is new for this diving deeper
+router.delete("/:videoId/comments/:commentId", (req, res) => {
+  const videos = readVideos();
+  const video = videos.find((v) => v.id === req.params.videoId);
+
+  if (!video) {
+    return res
+      .status(404)
+      .json({ message: "Cannot delete comment - associated video not found." });
+  }
+
+  const commentIndex = video.comments.findIndex(
+    (comment) => comment.id === req.params.commentId
+  );
+
+  if (commentIndex === -1) {
+    return res.status(404).json({ message: "Associated comment not found." });
+  }
+
+  //remove comment from array
+  const deleteCommentInArray = video.comments.splice(commentIndex, 1)[0];
+
+  writeVideos(videos); //do not remove - this is here to update json data with the updated comments
+
+  res.status(200).json(deleteCommentInArray);
+});
+
 export default router;
