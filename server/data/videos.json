@@ -295,15 +295,51 @@
   },
   {
     "id": "c8143f71-f668-47cf-a0e7-b31f93325e56",
-    "title": "Test for comment deletions",
-    "description": "Test for comment deletions",
-    "channel": "User Channel",
+    "title": "The Great Multiverse Marathon Relay",
+    "description": "Join Rick and the crew as they attempt the ultimate test of stamina and skill across infinite dimensions—the Multiverse Marathon Relay! With competitors ranging from the most elite alien athletes to lazy versions of Rick himself, anything goes in this high-stakes, high-speed race where the laws of physics are... optional.",
+    "channel": "Rick Sanchez",
     "image": "http://localhost:8080/images/sample-thumbnail.jpg",
-    "views": "0",
-    "likes": "0",
-    "duration": "0:00",
+    "views": "5,234,987",
+    "likes": "2,015,678",
+    "duration": "7:12",
     "video": "http://localhost:8080/videos/BrainStation_Sample_Video.mp4",
-    "timestamp": 1731121506005,
-    "comments": []
+    "timestamp": 1678105000000,
+    "comments": [
+      {
+        "id": "6a23b4f7-6c18-42e8-8aaf-87e1e2d78abc",
+        "name": "Morty Smith",
+        "comment": "Oh man, this is nuts, Rick! I'm barely keeping up with my own legs, and we're supposed to be racing against, like, tentacle aliens and robot versions of you?",
+        "likes": 1023,
+        "timestamp": 1678120000000
+      },
+      {
+        "id": "b7d8e5c1-2b59-4ef5-b8df-3c2d6b7e5d9f",
+        "name": "Summer Smith",
+        "comment": "Yeah, Morty, because nothing says ‘fun family bonding’ like running until you puke. Can’t wait to see how many dimensions we totally embarrass ourselves in.",
+        "likes": 764,
+        "timestamp": 1678130000000
+      },
+      {
+        "id": "8a23d5f7-2a15-4b6e-8a4e-9c5b6a7e4b3f",
+        "name": "Birdperson",
+        "comment": "The journey across dimensions is one of endurance and futility. A relay race... is merely a metaphor for the eternal struggle that binds us.",
+        "likes": 1320,
+        "timestamp": 1678140000000
+      },
+      {
+        "id": "d2f9b6d1-3b5a-4a5b-b7d8-3a1f4a7c6d9e",
+        "name": "Mr. Meeseeks",
+        "comment": "I'm Mr. Meeseeks! Look at me! Running this race is literally torture, but hey, I'm here to help! Go team!",
+        "likes": 590,
+        "timestamp": 1678150000000
+      },
+      {
+        "id": "f3a7e8b9-6c4b-4f7e-8a5e-2c9f7e6d4b1a",
+        "name": "Jerry Smith",
+        "comment": "So... if I finish this race, do I get some kind of interdimensional medal? Just asking. For... you know, science.",
+        "likes": 203,
+        "timestamp": 1678160000000
+      }
+    ]
   }
 ]
